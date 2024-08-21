@@ -5,7 +5,8 @@ import { styled } from "@mui/material/styles";
 
 //Dashboard CSS Link........@
 import "./Dashboard.css";
-import { useState } from "react";
+import React, { useState } from "react";
+import TopDrawer from "../../components/dashboard/TopDrawer";
 
 const CustomTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -26,6 +27,12 @@ const CustomTooltip = styled(({ className, ...props }) => (
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
+  const [openDrawer, setDrawerOpen] = useState(false);
+
+  // Toggle drawer state
+  const toggleDrawer = () => {
+    setDrawerOpen((prevOpen) => !prevOpen);
+  };
 
   const handleClick = () => {
     setOpen(!open);
@@ -36,58 +43,56 @@ const Dashboard = () => {
         <div className="left-top-button">
           <CustomTooltip
             title={
-              <>
-                <ul
-                  style={{
-                    padding: "15px",
-                    margin: 0,
-                    listStyle: "none",
-                    paddingLeft: "20px",
-                  }}
-                >
-                  {[
-                    "Marketing Panel",
-                    "Marketing Panel",
-                    "Marketing Panel",
-                    "Marketing Panel",
-                    "Tech. Help Desk",
-                  ].map((text, index) => (
-                    <li key={index} className="hover-effect">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d={
-                            index === 0
-                              ? "M11.1917 12.5H3.66666C2.15 12.5 1.18333 10.875 1.91666 9.5417L3.85833 6.00835L5.675 2.70001C6.43333 1.32501 8.41666 1.32501 9.17499 2.70001L11 6.00835L11.875 7.60002L12.9417 9.5417C13.675 10.875 12.7083 12.5 11.1917 12.5Z"
-                              : "M14.1417 10.2083V13.9583C14.1417 17.0833 12.8917 18.3333 9.76666 18.3333H6.01666C2.89166 18.3333 1.64166 17.0833 1.64166 13.9583V10.2083C1.64166 7.08331 2.89166 5.83331 6.01666 5.83331H9.76666C12.8917 5.83331 14.1417 7.08331 14.1417 10.2083Z"
-                          }
-                          stroke="#2B335E"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d={
-                            index === 0
-                              ? "M18.3333 12.9167C18.3333 15.9083 15.9083 18.3333 12.9167 18.3333C9.925 18.3333 7.5 15.9083 7.5 12.9167C7.5 12.775 7.50833 12.6417 7.51667 12.5H11.1917C12.7083 12.5 13.675 10.875 12.9417 9.54168L11.875 7.6C12.2083 7.53333 12.5583 7.5 12.9167 7.5C15.9083 7.5 18.3333 9.925 18.3333 12.9167Z"
-                              : "M18.3083 6.25002C18.3083 8.64169 16.4833 10.6 14.1417 10.8084V10.2084C14.1417 7.08335 12.8917 5.83335 9.76666 5.83335H9.16666C9.37499 3.49169 11.3333 1.66669 13.725 1.66669C16.05 1.66669 17.9667 3.39169 18.2583 5.64169C18.2917 5.83335 18.3083 6.04169 18.3083 6.25002Z"
-                          }
-                          stroke="#2B335E"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <span style={{ padding: "12px" }}>{text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </>
+              <ul
+                style={{
+                  padding: "15px",
+                  margin: 0,
+                  listStyle: "none",
+                  paddingLeft: "20px",
+                }}
+              >
+                {[
+                  "Marketing Panel",
+                  "Marketing Panel",
+                  "Marketing Panel",
+                  "Marketing Panel",
+                  "Tech. Help Desk",
+                ].map((text, index) => (
+                  <li key={index} className="hover-effect">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d={
+                          index === 0
+                            ? "M11.1917 12.5H3.66666C2.15 12.5 1.18333 10.875 1.91666 9.5417L3.85833 6.00835L5.675 2.70001C6.43333 1.32501 8.41666 1.32501 9.17499 2.70001L11 6.00835L11.875 7.60002L12.9417 9.5417C13.675 10.875 12.7083 12.5 11.1917 12.5Z"
+                            : "M14.1417 10.2083V13.9583C14.1417 17.0833 12.8917 18.3333 9.76666 18.3333H6.01666C2.89166 18.3333 1.64166 17.0833 1.64166 13.9583V10.2083C1.64166 7.08331 2.89166 5.83331 6.01666 5.83331H9.76666C12.8917 5.83331 14.1417 7.08331 14.1417 10.2083Z"
+                        }
+                        stroke="#2B335E"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d={
+                          index === 0
+                            ? "M18.3333 12.9167C18.3333 15.9083 15.9083 18.3333 12.9167 18.3333C9.925 18.3333 7.5 15.9083 7.5 12.9167C7.5 12.775 7.50833 12.6417 7.51667 12.5H11.1917C12.7083 12.5 13.675 10.875 12.9417 9.54168L11.875 7.6C12.2083 7.53333 12.5583 7.5 12.9167 7.5C15.9083 7.5 18.3333 9.925 18.3333 12.9167Z"
+                            : "M18.3083 6.25002C18.3083 8.64169 16.4833 10.6 14.1417 10.8084V10.2084C14.1417 7.08335 12.8917 5.83335 9.76666 5.83335H9.16666C9.37499 3.49169 11.3333 1.66669 13.725 1.66669C16.05 1.66669 17.9667 3.39169 18.2583 5.64169C18.2917 5.83335 18.3083 6.04169 18.3083 6.25002Z"
+                        }
+                        stroke="#2B335E"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span style={{ padding: "12px" }}>{text}</span>
+                  </li>
+                ))}
+              </ul>
             }
             arrow
             open={open}
@@ -105,25 +110,25 @@ const Dashboard = () => {
                   d="M13 32.1025C14.1046 32.1025 15 31.2071 15 30.1025C15 28.998 14.1046 28.1025 13 28.1025C11.8954 28.1025 11 28.998 11 30.1025C11 31.2071 11.8954 32.1025 13 32.1025Z"
                   fill="white"
                   stroke="#2B2B2B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M13 19C14.1046 19 15 18.1046 15 17C15 15.8954 14.1046 15 13 15C11.8954 15 11 15.8954 11 17C11 18.1046 11.8954 19 13 19Z"
                   fill="white"
                   stroke="#2B2B2B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M13 5.89746C14.1046 5.89746 15 5.00203 15 3.89746C15 2.79289 14.1046 1.89746 13 1.89746C11.8954 1.89746 11 2.79289 11 3.89746C11 5.00203 11.8954 5.89746 13 5.89746Z"
                   fill="white"
                   stroke="#2B2B2B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </button>
@@ -153,7 +158,8 @@ const Dashboard = () => {
           </button>
         </div>
         <div className="right-top-button">
-          <button className="btn-three">
+          <TopDrawer openDrawer={openDrawer} onClose={toggleDrawer} />
+          <button className="btn-three" onClick={toggleDrawer}>
             <svg
               width="28"
               height="28"
