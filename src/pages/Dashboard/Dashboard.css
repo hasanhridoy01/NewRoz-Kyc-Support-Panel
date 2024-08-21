@@ -1,0 +1,84 @@
+.dashboard {
+  position: relative;
+}
+
+.left-top-button {
+  position: absolute;
+  top: 35px;
+  left: 1px;
+  height: 50px;
+  width: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.right-top-button {
+  position: absolute;
+  top: 35px;
+  right: 1px;
+  height: 50px;
+  width: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* images */
+.img1 {
+  height: 50px;
+  width: 50px;
+}
+
+/* button */
+.btn-one {
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-two {
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  padding: 0px 4px;
+  gap: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px #00000040; /* Added proper box-shadow syntax */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-three {
+  height: 50px;
+  width: 50px;
+  border-radius: 42px;
+  border: 1px solid #39b4b4;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px #39b4b4;
+  cursor: pointer;
+}
+
+.hover-effect {
+  padding-bottom: 7px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #f1f3f6;
+  cursor: pointer;
+}
+
+.hover-effect:hover {
+  background-color: #f1f1e9;
+}
