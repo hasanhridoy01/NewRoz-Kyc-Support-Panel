@@ -72,13 +72,12 @@
 
 .hover-effect {
   padding-bottom: 7px;
-  padding-right: 10px;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #f1f3f6;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .hover-effect:hover {
-  background-color: #f1f1e9;
+  color: #00a1a1;
 }
