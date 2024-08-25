@@ -1,0 +1,20 @@
+.notification-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.notification-container {
+  padding: 20px;
+  background-color: #F0F9F9;
+}
+.title {
+  font-family: Roboto;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 21.09px;
+  text-align: left;
+  color: #000000E5;
+}

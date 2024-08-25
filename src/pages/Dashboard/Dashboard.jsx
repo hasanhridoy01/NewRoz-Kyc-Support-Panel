@@ -4,7 +4,9 @@ import { useState } from "react";
 import TopDrawer from "../../components/dashboard/TopDrawer";
 import { styled } from "@mui/material/styles";
 import LeftDrawer from "../../components/dashboard/LeftDrawer";
-import buttonImg from '../../assets/images/dashboard/Favirite.png'
+import buttonImg from "../../assets/images/dashboard/Favirite.png";
+import NotificationDrawer from "../../components/dashboard/NotificationDrawer";
+import AddModal from "../../components/AddModal/AddModal";
 
 const CustomTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -27,6 +29,8 @@ const Dashboard = () => {
   const [open, setOpen] = useState(false);
   const [openDrawer, setDrawerOpen] = useState(false);
   const [openLeftDrawer, setOpenLeftDrawer] = useState(false);
+  const [openNotificationDrawer, setOpenNotificationDrawer] = useState(false);
+  const [openAddModal, setOpenAddModal] = useState(false);
 
   // Toggle drawer state
   const toggleDrawer = () => {
@@ -37,6 +41,16 @@ const Dashboard = () => {
   const toggleLeftDrawer = () => {
     setOpenLeftDrawer(!openLeftDrawer);
   };
+
+  //handleNotificationDrawer
+  const handleNotificationDrawer = () => {
+    setOpenNotificationDrawer(!openNotificationDrawer);
+  };
+
+  //handleAddModal
+  const handleAddModal = () => {
+    setOpenAddModal(!openAddModal);
+  }
 
   const handleClick = () => {
     setOpen(!open);
@@ -168,11 +182,13 @@ const Dashboard = () => {
             style={{
               height: "222px",
               cursor: "pointer",
-              background: 'none',
-              border: "none"
+              background: "none",
+              border: "none",
             }}
             onClick={toggleLeftDrawer}
-          ><img style={{ paddingLeft: "0px" }} src={buttonImg} alt="" /></button>
+          >
+            <img style={{ paddingLeft: "0px" }} src={buttonImg} alt="" />
+          </button>
           <LeftDrawer
             openLeftDrawer={openLeftDrawer}
             onClose={toggleLeftDrawer}
@@ -225,8 +241,18 @@ const Dashboard = () => {
           </button>
         </div>
 
+        {/* NotificationDrawer */}
+        <NotificationDrawer
+          openNotificationDrawer={openNotificationDrawer}
+          onClose={handleNotificationDrawer}
+        />
+
+        {/* add-modal */}
+         <AddModal openAddModal={openAddModal} onClose={() => setOpenAddModal(false)} />
+
         <div className="left-bottom-button">
-          <button className="btn-four">
+          {/* Add-Modal */}
+          <button className="btn-four" onClick={handleAddModal}>
             <svg
               width="50"
               height="50"
@@ -279,7 +305,8 @@ const Dashboard = () => {
               />
             </svg>
           </button>
-          <button className="btn-four">
+
+          <button className="btn-four" onClick={handleNotificationDrawer}>
             <svg
               width="25"
               height="24"
@@ -301,6 +328,7 @@ const Dashboard = () => {
               />
             </svg>
           </button>
+
           <Avatar
             alt="Remy Sharp"
             src="/static/images/avatar/1.jpg"
