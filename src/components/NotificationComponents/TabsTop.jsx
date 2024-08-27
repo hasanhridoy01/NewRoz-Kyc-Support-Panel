@@ -50,7 +50,7 @@ export default function TabsTop() {
           aria-label="basic tabs example"
           sx={{
             "& .MuiTab-root": {
-              color: "#8D8D8D", // Default text color
+              color: "#037777", // Default text color
               fontWeight: 600, // Font weight
               lineHeight: "14.06px",
             },

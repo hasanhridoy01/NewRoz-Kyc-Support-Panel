@@ -40,7 +40,7 @@ const AddModal = ({ openAddModal, onClose }) => {
         <div className="add-header">
           <div className="add-modal-top">
             <p
-              style={{ display: "flex", alignItems: "center", padding: "9px" }}
+              style={{ display: "flex", alignItems: "center", padding: "9px", gap: '7px' }}
             >
               <svg
                 width="18"
@@ -97,22 +97,14 @@ const AddModal = ({ openAddModal, onClose }) => {
           </div>
         </div>
         <div className="add-modal-content">
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-          >
-            <Tab label="Tab 1" />
-            <Tab label="Tab 2" />
-            <Tab label="Tab 3" />
-          </Tabs>
+          
           <Typography
             id="modal-modal-title"
             variant="h6"
             component="h2"
             sx={{ mt: 2 }}
           >
-            Text in a modal
+            Text in drea modal
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
