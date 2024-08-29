@@ -7,6 +7,7 @@ import LeftDrawer from "../../components/dashboard/LeftDrawer";
 import buttonImg from "../../assets/images/dashboard/Favirite.png";
 import NotificationDrawer from "../../components/dashboard/NotificationDrawer";
 import AddModal from "../../components/AddModal/AddModal";
+import SearchModal from "../../components/SearchModal/SearchModal";
 
 const CustomTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -31,6 +32,7 @@ const Dashboard = () => {
   const [openLeftDrawer, setOpenLeftDrawer] = useState(false);
   const [openNotificationDrawer, setOpenNotificationDrawer] = useState(false);
   const [openAddModal, setOpenAddModal] = useState(false);
+  const [openSearchModal, setOpenSearchModal] = useState(false);
 
   // Toggle drawer state
   const toggleDrawer = () => {
@@ -50,7 +52,12 @@ const Dashboard = () => {
   //handleAddModal
   const handleAddModal = () => {
     setOpenAddModal(!openAddModal);
-  }
+  };
+
+  //handleSearchModal
+  const handleSearchModal = () => {
+    setOpenSearchModal(!openSearchModal);
+  };
 
   const handleClick = () => {
     setOpen(!open);
@@ -248,7 +255,16 @@ const Dashboard = () => {
         />
 
         {/* add-modal */}
-         <AddModal openAddModal={openAddModal} onClose={() => setOpenAddModal(false)} />
+        <AddModal
+          openAddModal={openAddModal}
+          onClose={() => setOpenAddModal(false)}
+        />
+
+        {/* Search-modal */}
+        <SearchModal
+          openSearchModal={openSearchModal}
+          onClose={() => setOpenSearchModal(false)}
+        />
 
         <div className="left-bottom-button">
           {/* Add-Modal */}
@@ -274,7 +290,7 @@ const Dashboard = () => {
               />
             </svg>
           </button>
-          <button className="btn-four">
+          <button className="btn-four" onClick={handleSearchModal}>
             <svg
               width="27"
               height="26"

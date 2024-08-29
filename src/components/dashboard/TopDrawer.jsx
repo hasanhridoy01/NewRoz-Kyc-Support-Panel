@@ -9,7 +9,7 @@ import NavigateDrawer from "./NavigateDrawer";
 
 export default function TopDrawer({ openDrawer, onClose }) {
   const [openNavigation, setOpenNavigation] = React.useState(false);
-  const [text, setText] = React.useState(''); 
+  const [text, setText] = React.useState("");
 
   //handleNavigation
   const handleNavigation = (text) => {
@@ -18,23 +18,28 @@ export default function TopDrawer({ openDrawer, onClose }) {
   };
 
   const DrawerList = openNavigation ? (
-    <NavigateDrawer onClose={onClose} setOpenNavigation={setOpenNavigation} text={text} />
+    <NavigateDrawer
+      onClose={onClose}
+      setOpenNavigation={setOpenNavigation}
+      text={text}
+    />
   ) : (
     <Box
       sx={{
-        height: "100%", // Make drawer full height
+        height: "100vh", // Make drawer full height
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         padding: "50px 0px 20px 0px",
         boxSizing: "border-box",
         position: "relative",
-        overflow: "hidden",
         gap: "20px",
+        marginBottom: "80px",
+        width: "100%",
       }}
       role="presentation"
     >
-      <Box sx={{ flexGrow: 1, padding: "0px 70px 0px 70px" }}>
+      <Box sx={{ padding: "0px 70px 0px 70px" }}>
         <h4
           style={{
             display: "flex",
@@ -1278,37 +1283,40 @@ export default function TopDrawer({ openDrawer, onClose }) {
           </Grid>
         </div>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          position: "absolute",
-          bottom: 16, // Adjust as needed
-          width: "100%", // Ensure it takes the full width
-        }}
-      >
-        <IconButton
-          edge="end"
-          color="inherit"
-          onClick={onClose}
-          aria-label="close"
+
+      <div className="" style={{ height: "100px", width: "100%", position: "relative", marginTop: "32px" }}>
+        <Box
           sx={{
-            backgroundColor: "#155C9E",
-            border: "1px solid #62C6FF",
-            color: "#fff",
-            boxShadow: "#0022421A",
-            height: "50px",
-            width: "50px",
-            borderRadius: "42px",
-            "&:hover": {
-              backgroundColor: "#155C9E", // Make sure the background color stays the same on hover
-              boxShadow: "#0022421A", // Make sure the box shadow stays the same on hover
-            },
+            display: "flex",
+            justifyContent: "center",
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
           }}
         >
-          <CloseIcon />
-        </IconButton>
-      </Box>
+          <IconButton
+            edge="end"
+            color="inherit"
+            onClick={onClose}
+            aria-label="close"
+            sx={{
+              backgroundColor: "#155C9E",
+              border: "1px solid #62C6FF",
+              color: "#fff",
+              boxShadow: "#0022421A",
+              height: "50px",
+              width: "50px",
+              borderRadius: "42px",
+              "&:hover": {
+                backgroundColor: "#155C9E", // Make sure the background color stays the same on hover
+                boxShadow: "#0022421A", // Make sure the box shadow stays the same on hover
+              },
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
+      </div>
     </Box>
   );
 
