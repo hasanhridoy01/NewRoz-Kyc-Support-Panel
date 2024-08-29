@@ -15,7 +15,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 800,
-  height: 694,
+  height: 624,
   bgcolor: "background.paper",
   borderRadius: "10px",
   background: "#ffffff",
@@ -254,30 +254,26 @@ const AddModal = ({ openAddModal, onClose }) => {
                 </select>
               </Grid>
 
-              <Grid item xs={12} sm={12}>
-                <div className="" style={{ width: "48.8%" }}>
-                  <label className="input-label" htmlFor="">
-                    Employee ID
-                  </label>
-                  <input
-                    className="input-field"
-                    type="text"
-                    placeholder="Employee ID"
-                  />
-                </div>
+              {/* Third Row */}
+              <Grid item xs={12} sm={6}>
+                <label className="input-label" htmlFor="">
+                  Employee ID
+                </label>
+                <input
+                  className="input-field"
+                  type="text"
+                  placeholder="Employee ID"
+                />
               </Grid>
-
-              <Grid item xs={12} sm={12}>
-                <div className="" style={{ width: "48.8%" }}>
-                  <label className="input-label" htmlFor="">
-                    Employee ID
-                  </label>
-                  <input
-                    className="input-field"
-                    type="file"
-                    placeholder="Employee ID"
-                  />
-                </div>
+              <Grid item xs={12} sm={6}>
+                <label className="input-label" htmlFor="">
+                  Profile picture
+                </label>
+                <input
+                  className="input-field"
+                  type="file"
+                  placeholder="Employee ID"
+                />
               </Grid>
             </Grid>
           </CustomTabPanel>

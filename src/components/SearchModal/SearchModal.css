@@ -19,7 +19,7 @@
   justify-content: space-between;
 }
 .search-modal-content {
-  padding: 20px;
+  padding: 23px 20px 20px 20px;
 }
 
 .search-field {
@@ -38,13 +38,13 @@
 }
 .search-btn {
   height: 50px;
-  width: 249px;
+  width: 100%;
   margin-top: 14px;
   position: absolute;
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   gap: 8px;
 }
 .restore-btn {
