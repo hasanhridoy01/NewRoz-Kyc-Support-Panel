@@ -16,7 +16,7 @@
   gap: 10px;
 }
 
-.left-button{
+.left-button {
   position: absolute;
   top: 190px;
   left: 0px;
@@ -123,11 +123,11 @@
   cursor: pointer;
 }
 
-.btn-four-extra{
+.btn-four-extra {
   height: 50px;
   width: 50px;
   border-radius: 42px;
-  border: 1px solid #FC2861;
+  border: 1px solid #fc2861;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -141,9 +141,80 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .hover-effect:hover {
   color: #00a1a1;
+}
+
+.userToolTip-header {
+  height: 45px;
+  width: 100%;
+  border-bottom: 1px solid #f1f1f6;
+  padding: 15px 5px 15px 25px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: left;
+  color: #155c9e;
+}
+.userToolTip-item {
+  width: 100%;
+  padding: 15px 5px 15px 25px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  text-align: left;
+  color: #585858;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  cursor: pointer;
+}
+.questionToolTip-item {
+  width: 100%;
+  padding: 15px 5px 15px 25px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 12px;
+  text-align: left;
+  color: #585858;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f3f6;
+}
+
+.questionToolTip-item:hover {
+  color: #00a1a1;
+}
+
+.userToolTip-item:hover {
+  color: #00a1a1;
+}
+
+.questionToolTip-bottom {
+  width: 200px;
+  height: 105px;
+  color: #fff;
+  background-color: #2b335e;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0px 0px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
 }

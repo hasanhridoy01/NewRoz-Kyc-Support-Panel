@@ -1,4 +1,4 @@
-import { Avatar, Divider, Tooltip } from "@mui/material";
+import { Avatar, Container, Divider, Tooltip } from "@mui/material";
 import "./Dashboard.css";
 import { useState } from "react";
 import TopDrawer from "../../components/dashboard/TopDrawer";
@@ -26,13 +26,49 @@ const CustomTooltip = styled(({ className, ...props }) => (
   },
 });
 
+const CustomTooltipUser = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .MuiTooltip-tooltip`]: {
+    backgroundColor: "#ffffff",
+    color: "#000",
+    borderRadius: "4px",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
+    fontSize: "0.875rem",
+    marginLeft: "13px",
+    padding: "0px",
+  },
+  [`& .MuiTooltip-arrow`]: {
+    color: "#ffffff",
+  },
+});
+
+const CustomTooltipQuestion = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .MuiTooltip-tooltip`]: {
+    backgroundColor: "#ffffff",
+    color: "#000",
+    borderRadius: "4px",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
+    fontSize: "0.875rem",
+    marginRight: "12px",
+    padding: "0px",
+  },
+  [`& .MuiTooltip-arrow`]: {
+    color: "#2b335e",
+  },
+});
+
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
+  const [openUser, setOpenUser] = useState(false);
+  const [openQuestion, setOpenQuestion] = useState(false);
   const [openDrawer, setDrawerOpen] = useState(false);
-  const [openLeftDrawer, setOpenLeftDrawer] = useState(false);
-  const [openNotificationDrawer, setOpenNotificationDrawer] = useState(false);
   const [openAddModal, setOpenAddModal] = useState(false);
+  const [openLeftDrawer, setOpenLeftDrawer] = useState(false);
   const [openSearchModal, setOpenSearchModal] = useState(false);
+  const [openNotificationDrawer, setOpenNotificationDrawer] = useState(false);
 
   // Toggle drawer state
   const toggleDrawer = () => {
@@ -57,6 +93,16 @@ const Dashboard = () => {
   //handleSearchModal
   const handleSearchModal = () => {
     setOpenSearchModal(!openSearchModal);
+  };
+
+  //handleUser-ToolTip
+  const handleClickUser = () => {
+    setOpenUser(!openUser);
+  };
+
+  //handleClickQuestion
+  const handleClickQuestion = () => {
+    setOpenQuestion(!openQuestion);
   };
 
   const handleClick = () => {
@@ -202,8 +248,10 @@ const Dashboard = () => {
           />
         </div>
 
+        {/* TopDrawer */}
+        <TopDrawer openDrawer={openDrawer} onClose={toggleDrawer} />
+
         <div className="right-top-button">
-          <TopDrawer openDrawer={openDrawer} onClose={toggleDrawer} />
           <button className="btn-three" onClick={toggleDrawer}>
             <svg
               width="28"
@@ -247,6 +295,8 @@ const Dashboard = () => {
             </svg>
           </button>
         </div>
+
+        
 
         {/* NotificationDrawer */}
         <NotificationDrawer
@@ -345,16 +395,202 @@ const Dashboard = () => {
             </svg>
           </button>
 
-          <Avatar
-            alt="Remy Sharp"
-            src="/static/images/avatar/1.jpg"
-            sx={{
-              width: 47,
-              height: 47,
-              border: "1px solid #fff",
-              boxShadow: "0 1px 2px #00000040",
-            }}
-          />
+          <CustomTooltipUser
+            arrow
+            open={openUser}
+            onClick={handleClickUser}
+            title={
+              <ul
+                style={{
+                  margin: 0,
+                  listStyle: "none",
+                  height: "256px",
+                  width: "200px",
+                }}
+              >
+                <li className="userToolTip-header">Cameron Williamson</li>
+                <li className="userToolTip-item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.5 7.59169V12.4C2.5 14.1667 2.5 14.1667 4.16667 15.2917L8.75 17.9417C9.44167 18.3417 10.5667 18.3417 11.25 17.9417L15.8333 15.2917C17.5 14.1667 17.5 14.1667 17.5 12.4084V7.59169C17.5 5.83336 17.5 5.83336 15.8333 4.70836L11.25 2.05836C10.5667 1.65836 9.44167 1.65836 8.75 2.05836L4.16667 4.70836C2.5 5.83336 2.5 5.83336 2.5 7.59169Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Manage Profile
+                </li>
+                <li className="userToolTip-item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.84164 15L2.49998 11.6583C1.38331 10.5417 1.38331 9.43333 2.49998 8.31666L8.06664 2.75L14.1916 8.87503C14.5 9.18336 14.5 9.68334 14.1916 9.99167L9.17497 15.0084C8.07497 16.1084 6.95831 16.1083 5.84164 15Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.95831 1.625L8.07498 2.74164"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M1.72498 9.93334L14.325 9.38336"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M2.5 18.3333H13.3333"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15.7084 12.5C15.7084 12.5 14.1667 14.175 14.1667 15.2C14.1667 16.05 14.8584 16.7416 15.7084 16.7416C16.5584 16.7416 17.25 16.05 17.25 15.2C17.25 14.175 15.7084 12.5 15.7084 12.5Z"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Dark Mode
+                </li>
+                <li className="userToolTip-item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18.3333 5.41669H13.3333"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M5.00002 5.41669H1.66669"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.33335 8.33333C9.94418 8.33333 11.25 7.0275 11.25 5.41667C11.25 3.80584 9.94418 2.5 8.33335 2.5C6.72252 2.5 5.41669 3.80584 5.41669 5.41667C5.41669 7.0275 6.72252 8.33333 8.33335 8.33333Z"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M18.3333 14.5833H15"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.66669 14.5833H1.66669"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M11.6667 17.5C13.2775 17.5 14.5833 16.1942 14.5833 14.5834C14.5833 12.9725 13.2775 11.6667 11.6667 11.6667C10.0558 11.6667 8.75 12.9725 8.75 14.5834C8.75 16.1942 10.0558 17.5 11.6667 17.5Z"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Customize Dashboard
+                </li>
+                <li className="userToolTip-item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.41669 6.30001C7.67502 3.30001 9.21669 2.07501 12.5917 2.07501H12.7C16.425 2.07501 17.9167 3.56668 17.9167 7.29168V12.725C17.9167 16.45 16.425 17.9417 12.7 17.9417H12.5917C9.24169 17.9417 7.70002 16.7333 7.42502 13.7833"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.5 10H3.01666"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M4.87498 7.20831L2.08331 9.99998L4.87498 12.7916"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Logout
+                </li>
+              </ul>
+            }
+          >
+            <Avatar
+              alt="Remy Sharp"
+              src="/static/images/avatar/1.jpg"
+              sx={{
+                width: 47,
+                height: 47,
+                border: "1px solid #fff",
+                boxShadow: "0 1px 2px #00000040",
+                cursor: "pointer",
+              }}
+              onClick={handleClickUser}
+            />
+          </CustomTooltipUser>
         </div>
 
         <div className="right-bottom-button">
@@ -433,21 +669,128 @@ const Dashboard = () => {
               />
             </svg>
           </button>
-          <button className="btn-four">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M10.5 17.25H12.75V19.5H10.5V17.25Z" fill="#969696" />
-              <path
-                d="M6.375 8.64813C6.96129 5.74253 9.72328 3.78559 12.6896 4.17409C15.6559 4.56258 17.8092 7.16327 17.6125 10.1199C17.4159 13.0765 14.9368 15.3751 11.9446 15.375H10.5V13.2115H11.9446C13.7155 13.2115 15.4615 11.6971 15.4615 9.75C15.4615 7.80288 13.768 6.50481 12 6.50481C9.57296 6.50481 8.53846 9.10096 8.53846 9.10096L6.375 8.64813Z"
-                fill="#969696"
-              />
-            </svg>
-          </button>
+
+          <CustomTooltipQuestion
+            arrow
+            open={openQuestion}
+            onClick={handleClickQuestion}
+            title={
+              <ul
+                style={{
+                  margin: 0,
+                  listStyle: "none",
+                  height: "256px",
+                  width: "200px",
+                  position: "relative",
+                }}
+              >
+                <li className="questionToolTip-item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.275 10.125L8.21669 12.1833C7.07502 13.325 7.07502 15.1667 8.21669 16.3083C9.35836 17.45 11.2 17.45 12.3417 16.3083L15.5834 13.0667C17.8584 10.7917 17.8584 7.09166 15.5834 4.81666C13.3084 2.54166 9.60836 2.54166 7.33336 4.81666L3.80002 8.35C1.85002 10.3 1.85002 13.4667 3.80002 15.425"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Privacy Policy
+                </li>
+                <li className="questionToolTip-item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.4917 12.4417C14.775 14.15 12.3167 14.675 10.1584 14L6.23337 17.9167C5.95004 18.2083 5.39171 18.3833 4.99171 18.325L3.17504 18.075C2.57504 17.9917 2.01671 17.425 1.92504 16.825L1.67504 15.0083C1.61671 14.6083 1.80837 14.05 2.08337 13.7667L6.00004 9.85C5.33337 7.68333 5.85004 5.225 7.56671 3.51666C10.025 1.05833 14.0167 1.05833 16.4834 3.51666C18.95 5.975 18.95 9.98333 16.4917 12.4417Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M5.7417 14.575L7.65837 16.4917"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.0834 9.16669C12.7737 9.16669 13.3334 8.60704 13.3334 7.91669C13.3334 7.22633 12.7737 6.66669 12.0834 6.66669C11.393 6.66669 10.8334 7.22633 10.8334 7.91669C10.8334 8.60704 11.393 9.16669 12.0834 9.16669Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Trams & Condation
+                </li>
+                <li className="questionToolTip-item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.8333 7.50002C15.8333 8.70835 15.475 9.8167 14.8583 10.7417C13.9583 12.075 12.5333 13.0167 10.875 13.2584C10.5916 13.3084 10.3 13.3334 9.99996 13.3334C9.69996 13.3334 9.40829 13.3084 9.12496 13.2584C7.46663 13.0167 6.04163 12.075 5.14163 10.7417C4.52496 9.8167 4.16663 8.70835 4.16663 7.50002C4.16663 4.27502 6.77496 1.66669 9.99996 1.66669C13.225 1.66669 15.8333 4.27502 15.8333 7.50002Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M17.7084 15.3917L16.3334 15.7167C16.025 15.7917 15.7834 16.025 15.7167 16.3333L15.425 17.5583C15.2667 18.225 14.4167 18.425 13.975 17.9L10 13.3333L6.02503 17.9083C5.58336 18.4333 4.73336 18.2333 4.57502 17.5667L4.28336 16.3417C4.20836 16.0333 3.96669 15.7917 3.66669 15.725L2.29169 15.4C1.65836 15.25 1.43336 14.4583 1.89169 14L5.14169 10.75C6.04169 12.0833 7.46669 13.025 9.12503 13.2667C9.40836 13.3167 9.70003 13.3417 10 13.3417C10.3 13.3417 10.5917 13.3167 10.875 13.2667C12.5334 13.025 13.9584 12.0833 14.8584 10.75L18.1084 14C18.5667 14.45 18.3417 15.2417 17.7084 15.3917Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10.4834 4.98331L10.9751 5.96664C11.0417 6.09997 11.2167 6.23331 11.3751 6.25831L12.2667 6.40831C12.8334 6.49997 12.9667 6.91664 12.5584 7.32498L11.8667 8.01663C11.7501 8.1333 11.6834 8.35831 11.7251 8.52498L11.9251 9.38331C12.0834 10.0583 11.7251 10.325 11.1251 9.96663L10.2917 9.47497C10.1417 9.3833 9.89173 9.3833 9.74173 9.47497L8.90839 9.96663C8.30839 10.3166 7.95006 10.0583 8.10839 9.38331L8.30839 8.52498C8.34173 8.36665 8.28339 8.1333 8.16673 8.01663L7.47506 7.32498C7.06673 6.91664 7.20006 6.50831 7.76673 6.40831L8.65839 6.25831C8.80839 6.23331 8.98339 6.09997 9.05006 5.96664L9.54173 4.98331C9.78339 4.44998 10.2167 4.44998 10.4834 4.98331Z"
+                      stroke="#2B335E"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  About
+                </li>
+                <li className="questionToolTip-bottom">
+                  <span>Version - 12.4.02</span>
+                  <span>Copyright 2024</span>
+                </li>
+              </ul>
+            }
+          >
+            <button className="btn-four" onClick={handleClickQuestion}>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M10.5 17.25H12.75V19.5H10.5V17.25Z" fill="#969696" />
+                <path
+                  d="M6.375 8.64813C6.96129 5.74253 9.72328 3.78559 12.6896 4.17409C15.6559 4.56258 17.8092 7.16327 17.6125 10.1199C17.4159 13.0765 14.9368 15.3751 11.9446 15.375H10.5V13.2115H11.9446C13.7155 13.2115 15.4615 11.6971 15.4615 9.75C15.4615 7.80288 13.768 6.50481 12 6.50481C9.57296 6.50481 8.53846 9.10096 8.53846 9.10096L6.375 8.64813Z"
+                  fill="#969696"
+                />
+              </svg>
+            </button>
+          </CustomTooltipQuestion>
         </div>
       </div>
     </section>
