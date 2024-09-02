@@ -52,8 +52,9 @@
 }
 .card-content {
   cursor: pointer;
+  color: #000;
 }
-.card-icon {
+.card-drawer-icon {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -182,7 +182,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -252,7 +252,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -323,7 +323,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -411,7 +411,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -495,7 +495,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -589,7 +589,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -673,7 +673,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -764,7 +764,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
                     onClick={() => handleNavigation("KYC Request")}
                   >
                     <div className="card-content">
-                      <span className="card-icon">
+                      <span className="card-drawer-icon">
                         <svg
                           width="25"
                           height="24"
@@ -842,7 +842,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -933,7 +933,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -1031,7 +1031,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
                     onClick={() => handleNavigation("Banking Log")}
                   >
                     <div className="card-content">
-                      <span className="card-icon">
+                      <span className="card-drawer-icon">
                         <svg
                           width="25"
                           height="24"
@@ -1149,7 +1149,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
                     onClick={() => handleNavigation("Manage Roles")}
                   >
                     <div className="card-content">
-                      <span className="card-icon">
+                      <span className="card-drawer-icon">
                         <svg
                           width="25"
                           height="24"
@@ -1223,7 +1223,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
                     onClick={() => handleNavigation("Manage Access")}
                   >
                     <div className="card-content">
-                      <span className="card-icon">
+                      <span className="card-drawer-icon">
                         <svg
                           width="25"
                           height="24"
@@ -1327,10 +1327,11 @@ export default function TopDrawer({ openDrawer, onClose }) {
       onClose={onClose}
       sx={{
         ".MuiDrawer-paper": {
-          height: "100vh", // Set a large height or adjust as needed
-          width: "100%", // Make it full width
-          boxShadow: "none", // Remove the default shadow
-          backgroundColor: "#F8F8FA8F", // Set background color to white
+          height: "100vh", 
+          width: "100%", 
+          boxShadow: "none", 
+          backgroundColor: "#F8F8FA8F",
+          backdropFilter: "blur(5px)"
         },
       }}
     >

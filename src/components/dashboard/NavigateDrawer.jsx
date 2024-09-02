@@ -219,7 +219,7 @@ const NavigateDrawer = ({ onClose, setOpenNavigation, text }) => {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -291,7 +291,7 @@ const NavigateDrawer = ({ onClose, setOpenNavigation, text }) => {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -363,7 +363,7 @@ const NavigateDrawer = ({ onClose, setOpenNavigation, text }) => {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -435,7 +435,7 @@ const NavigateDrawer = ({ onClose, setOpenNavigation, text }) => {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -507,7 +507,7 @@ const NavigateDrawer = ({ onClose, setOpenNavigation, text }) => {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
@@ -579,7 +579,7 @@ const NavigateDrawer = ({ onClose, setOpenNavigation, text }) => {
             <Grid item xs={12} lg={4}>
               <div className="top-drawer-card">
                 <div className="card-content">
-                  <span className="card-icon">
+                  <span className="card-drawer-icon">
                     <svg
                       width="25"
                       height="24"
