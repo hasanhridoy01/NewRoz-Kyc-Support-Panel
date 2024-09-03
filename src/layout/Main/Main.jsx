@@ -80,6 +80,7 @@ const Main = () => {
   const toggleLeftDrawer = () => {
     setOpenLeftDrawer(!openLeftDrawer);
     setOpenUser(false);
+    setOpen(false);
   };
 
   //handleNotificationDrawer
