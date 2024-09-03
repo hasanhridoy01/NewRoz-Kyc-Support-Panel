@@ -141,7 +141,7 @@ const NotificationDrawer = ({ openNotificationDrawer, onClose }) => {
   );
   return (
     <div style={{ position: "relative" }}>
-      <Drawer anchor="left" open={openNotificationDrawer} onClose={onClose}>
+      <Drawer sx={{ zIndex: 2000 }} anchor="left" open={openNotificationDrawer} onClose={onClose}>
         {DrawerList}
       </Drawer>
     </div>

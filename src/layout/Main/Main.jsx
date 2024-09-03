@@ -79,6 +79,7 @@ const Main = () => {
   //toggleLeftDrawer
   const toggleLeftDrawer = () => {
     setOpenLeftDrawer(!openLeftDrawer);
+    setOpenUser(false);
   };
 
   //handleNotificationDrawer
@@ -232,17 +233,19 @@ const Main = () => {
         </div>
 
         <div className="left-button">
-          <button
-            style={{
-              height: "222px",
-              cursor: "pointer",
-              background: "none",
-              border: "none",
-            }}
-            onClick={toggleLeftDrawer}
-          >
-            <img style={{ paddingLeft: "0px" }} src={buttonImg} alt="" />
-          </button>
+          {!openLeftDrawer && (
+            <button
+              style={{
+                height: "222px",
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+              }}
+              onClick={toggleLeftDrawer}
+            >
+              <img style={{ paddingLeft: "0px" }} src={buttonImg} alt="" />
+            </button>
+          )}
           <LeftDrawer
             openLeftDrawer={openLeftDrawer}
             onClose={toggleLeftDrawer}
@@ -591,7 +594,7 @@ const Main = () => {
                 width: 47,
                 height: 47,
                 border: "1px solid #fff",
-                boxShadow: "0 1px 2px #00000040",
+                boxShadow: "0 1px 2px rgba(0, 0, 0, 0.25)", // Adjusted the boxShadow opacity to match the format
                 cursor: "pointer",
               }}
               onClick={handleClickUser}

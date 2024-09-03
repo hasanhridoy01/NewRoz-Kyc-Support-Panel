@@ -323,11 +323,10 @@ const LeftDrawer = ({ openLeftDrawer, onClose }) => {
         <button
           style={{
             position: "absolute",
-            left: "315px", // Adjust this value to control the button's offset
-            top: "50%",
+            left: "337px", // Adjust this value to control the button's offset
+            top: "40%",
             transform: "translateY(-10%)",
             cursor: "pointer",
-            zIndex: 1300,
             height: "222px",
             background: "none",
             border: "none",
