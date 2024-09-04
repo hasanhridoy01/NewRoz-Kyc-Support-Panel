@@ -15,8 +15,14 @@ import card7 from "../../assets/images/dashboard/cardImages/Icon6.png";
 import card8 from "../../assets/images/dashboard/cardImages/Icon8.png";
 import card9 from "../../assets/images/dashboard/cardImages/Icon9.png";
 import card10 from "../../assets/images/dashboard/cardImages/Icon10.png";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+  //NavigatePortalListPage
+  const NavigatePortalListPage = () => {
+    navigate('/listView');
+  };
   return (
     <div className="dashboard-container">
       <Grid
@@ -834,7 +840,7 @@ const Dashboard = () => {
         spacing={3}
       >
         <Grid item xs={12} lg={3}>
-          <div className="dashboard-main-card">
+          <div className="dashboard-main-card" onClick={NavigatePortalListPage}>
             <img src={card1} alt="" />
             <div className="">
               <h2>628K</h2>
