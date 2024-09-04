@@ -257,7 +257,7 @@ const rows = [
     email: "jaime.lannister@got.com",
     docType: "Driver's License",
     docId: "1122334455",
-    registrationDate: "2023-02-10 23:45:00", // Date and time in BST
+    registrationDate: "2023-02-10 23:45:00",
     avatar: "https://example.com/jaime_lannister_avatar.jpg",
   },
   {
@@ -269,7 +269,7 @@ const rows = [
     email: "arya.stark@got.com",
     docType: "ID",
     docId: "5566778899",
-    registrationDate: "2023-03-25 17:00:00", // Date and time in BST
+    registrationDate: "2023-03-25 17:00:00", 
     avatar: "https://example.com/arya_stark_avatar.jpg",
   },
   {
@@ -281,7 +281,7 @@ const rows = [
     email: "tyrion.lannister@got.com",
     docType: "Passport",
     docId: "2233445566",
-    registrationDate: "2023-04-05 13:30:00", // Date and time in BST
+    registrationDate: "2023-04-05 13:30:00", 
     avatar: "https://example.com/tyrion_lannister_avatar.jpg",
   },
   {
@@ -293,7 +293,7 @@ const rows = [
     email: "sansa.stark@got.com",
     docType: "ID",
     docId: "6677889900",
-    registrationDate: "2023-05-12 16:45:00", // Date and time in BST
+    registrationDate: "2023-05-12 16:45:00", 
     avatar: "https://example.com/sansa_stark_avatar.jpg",
   },
   {
@@ -305,7 +305,7 @@ const rows = [
     email: "bran.stark@got.com",
     docType: "Driver's License",
     docId: "9988776655",
-    registrationDate: "2023-06-20 08:00:00", // Date and time in BST
+    registrationDate: "2023-06-20 08:00:00", 
     avatar: "https://example.com/bran_stark_avatar.jpg",
   },
 ];
@@ -357,7 +357,7 @@ const ListTable = () => {
               },
               // Highlight the selected column
               "& .MuiDataGrid-cell--selected": {
-                backgroundColor: "rgba(0, 123, 255, 0.25)", // Customize the column highlight color
+                backgroundColor: "rgba(0, 123, 255, 0.25)",
                 "&:hover": {
                   backgroundColor: "rgba(0, 123, 255, 0.35)", // Highlight on hover
                 },
