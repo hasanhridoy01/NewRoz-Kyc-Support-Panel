@@ -192,6 +192,10 @@ svg {
   cursor: pointer;
 }
 
+.details-close-btn:hover {
+  background-color: #eff3ff;
+}
+
 .list-btn-one {
   width: 98px;
   height: 24px;
