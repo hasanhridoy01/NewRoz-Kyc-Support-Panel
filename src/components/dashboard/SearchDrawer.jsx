@@ -103,20 +103,194 @@ const SearchDrawer = ({ onClose, openSearchNavigation }) => {
 
           {/* Card that shows when there's text in the input */}
           {showCard && (
-            <div className="search-card" style={{ marginTop: "10px" }}>
-              <Box
-                sx={{
-                  padding: "20px",
-                  backgroundColor: "#f0f0f0",
-                  borderRadius: "8px",
-                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-                }}
-              >
-                <h3>Search Suggestions</h3>
-                <p>Suggestion 1</p>
-                <p>Suggestion 2</p>
-                <p>Suggestion 3</p>
-              </Box>
+            <div className="search-card">
+              <div className="search-content">
+                <p>KYC Request</p>
+                <h5>
+                  Partial KYC List{" "}
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9301 5.92993L21.0001 11.9999L14.9301 18.0699M4 12H20.83"
+                      stroke="#555555"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </h5>
+                <h5>
+                  Partial KYC List{" "}
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9301 5.92993L21.0001 11.9999L14.9301 18.0699M4 12H20.83"
+                      stroke="#555555"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </h5>
+                <h5>
+                  Partial KYC List{" "}
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9301 5.92993L21.0001 11.9999L14.9301 18.0699M4 12H20.83"
+                      stroke="#555555"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </h5>
+                <h5>
+                  Partial KYC List{" "}
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9301 5.92993L21.0001 11.9999L14.9301 18.0699M4 12H20.83"
+                      stroke="#555555"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </h5>
+                <h5>
+                  Partial KYC List{" "}
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9301 5.92993L21.0001 11.9999L14.9301 18.0699M4 12H20.83"
+                      stroke="#555555"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </h5>
+              </div>
+              <div className="search-recent">
+                <p>Recent</p>
+                <h5>
+                  <span>
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.5 12C22.5 17.52 18.02 22 12.5 22C6.98 22 2.5 17.52 2.5 12C2.5 6.48 6.98 2 12.5 2C18.02 2 22.5 6.48 22.5 12Z"
+                        stroke="#969696"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.2099 15.18L13.1099 13.33C12.5699 13.01 12.1299 12.24 12.1299 11.61V7.51001"
+                        stroke="#969696"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Partial KYC List{" "}
+                  </span>
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9301 5.92993L21.0001 11.9999L14.9301 18.0699M4 12H20.83"
+                      stroke="#555555"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </h5>
+                <h5>
+                  <span>
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.5 12C22.5 17.52 18.02 22 12.5 22C6.98 22 2.5 17.52 2.5 12C2.5 6.48 6.98 2 12.5 2C18.02 2 22.5 6.48 22.5 12Z"
+                        stroke="#969696"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M16.2099 15.18L13.1099 13.33C12.5699 13.01 12.1299 12.24 12.1299 11.61V7.51001"
+                        stroke="#969696"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Partial KYC List{" "}
+                  </span>
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9301 5.92993L21.0001 11.9999L14.9301 18.0699M4 12H20.83"
+                      stroke="#555555"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </h5>
+              </div>
             </div>
           )}
         </div>
