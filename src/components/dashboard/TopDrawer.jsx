@@ -6,9 +6,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Grid } from "@mui/material";
 import "./TopDrawer.css";
 import NavigateDrawer from "./NavigateDrawer";
+import SearchDrawer from "./SearchDrawer";
 
 export default function TopDrawer({ openDrawer, onClose }) {
   const [openNavigation, setOpenNavigation] = React.useState(false);
+  const [openSearchNavigation, setOpenSearchNavigation] = React.useState(false);
   const [text, setText] = React.useState("");
 
   //handleNavigation
@@ -17,7 +19,17 @@ export default function TopDrawer({ openDrawer, onClose }) {
     setOpenNavigation(true);
   };
 
-  const DrawerList = openNavigation ? (
+  // handleSearchNavigation
+  const handleSearchNavigation = () => {
+    setOpenSearchNavigation(true);
+  };
+
+  const DrawerList = openSearchNavigation ? (
+    <SearchDrawer
+      onClose={onClose}
+      setOpenSearchNavigation={setOpenSearchNavigation}
+    />
+  ) : openNavigation ? (
     <NavigateDrawer
       onClose={onClose}
       setOpenNavigation={setOpenNavigation}
@@ -40,58 +52,94 @@ export default function TopDrawer({ openDrawer, onClose }) {
       role="presentation"
     >
       <Box sx={{ padding: "0px 70px 0px 70px" }}>
-        <h4
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "7px",
-            color: "#BE185D",
-            fontSize: "22px",
-          }}
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <div className="top-drawer-header">
+          <h4
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "7px",
+              color: "#BE185D",
+              fontSize: "22px",
+            }}
           >
-            <path
-              d="M18.0399 8.30989C19.3986 8.30989 20.5 7.20851 20.5 5.84989C20.5 4.49127 19.3986 3.38989 18.0399 3.38989C16.6813 3.38989 15.58 4.49127 15.58 5.84989C15.58 7.20851 16.6813 8.30989 18.0399 8.30989Z"
-              stroke="#BE185D"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M6.96001 8.30989C8.31863 8.30989 9.42 7.20851 9.42 5.84989C9.42 4.49127 8.31863 3.38989 6.96001 3.38989C5.60139 3.38989 4.5 4.49127 4.5 5.84989C4.5 7.20851 5.60139 8.30989 6.96001 8.30989Z"
-              stroke="#BE185D"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M18.0399 20.6099C19.3986 20.6099 20.5 19.5086 20.5 18.1499C20.5 16.7913 19.3986 15.6899 18.0399 15.6899C16.6813 15.6899 15.58 16.7913 15.58 18.1499C15.58 19.5086 16.6813 20.6099 18.0399 20.6099Z"
-              stroke="#BE185D"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M6.96001 20.6099C8.31863 20.6099 9.42 19.5086 9.42 18.1499C9.42 16.7913 8.31863 15.6899 6.96001 15.6899C5.60139 15.6899 4.5 16.7913 4.5 18.1499C4.5 19.5086 5.60139 20.6099 6.96001 20.6099Z"
-              stroke="#BE185D"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          App All Navigation
-        </h4>
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.0399 8.30989C19.3986 8.30989 20.5 7.20851 20.5 5.84989C20.5 4.49127 19.3986 3.38989 18.0399 3.38989C16.6813 3.38989 15.58 4.49127 15.58 5.84989C15.58 7.20851 16.6813 8.30989 18.0399 8.30989Z"
+                stroke="#BE185D"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.96001 8.30989C8.31863 8.30989 9.42 7.20851 9.42 5.84989C9.42 4.49127 8.31863 3.38989 6.96001 3.38989C5.60139 3.38989 4.5 4.49127 4.5 5.84989C4.5 7.20851 5.60139 8.30989 6.96001 8.30989Z"
+                stroke="#BE185D"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M18.0399 20.6099C19.3986 20.6099 20.5 19.5086 20.5 18.1499C20.5 16.7913 19.3986 15.6899 18.0399 15.6899C16.6813 15.6899 15.58 16.7913 15.58 18.1499C15.58 19.5086 16.6813 20.6099 18.0399 20.6099Z"
+                stroke="#BE185D"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.96001 20.6099C8.31863 20.6099 9.42 19.5086 9.42 18.1499C9.42 16.7913 8.31863 15.6899 6.96001 15.6899C5.60139 15.6899 4.5 16.7913 4.5 18.1499C4.5 19.5086 5.60139 20.6099 6.96001 20.6099Z"
+                stroke="#BE185D"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            App All Navigation
+          </h4>
+
+          <div className="">
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+              }}
+            >
+              <IconButton
+                edge="end"
+                color="inherit"
+                onClick={onClose}
+                aria-label="close"
+                sx={{
+                  backgroundColor: "#155C9E",
+                  border: "1px solid #62C6FF",
+                  color: "#fff",
+                  boxShadow: "#0022421A",
+                  height: "50px",
+                  width: "50px",
+                  borderRadius: "42px",
+                  "&:hover": {
+                    backgroundColor: "#155C9E", // Make sure the background color stays the same on hover
+                    boxShadow: "#0022421A", // Make sure the box shadow stays the same on hover
+                  },
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+            </Box>
+          </div>
+        </div>
+
         <div className="" style={{ marginTop: "20px" }}>
           <div
             style={{
@@ -110,6 +158,7 @@ export default function TopDrawer({ openDrawer, onClose }) {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  onClick={handleSearchNavigation}
                 >
                   <path
                     d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
@@ -1283,40 +1332,6 @@ export default function TopDrawer({ openDrawer, onClose }) {
           </Grid>
         </div>
       </Box>
-
-      <div className="" style={{ height: "100px", width: "100%", position: "relative", marginTop: "32px" }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-          }}
-        >
-          <IconButton
-            edge="end"
-            color="inherit"
-            onClick={onClose}
-            aria-label="close"
-            sx={{
-              backgroundColor: "#155C9E",
-              border: "1px solid #62C6FF",
-              color: "#fff",
-              boxShadow: "#0022421A",
-              height: "50px",
-              width: "50px",
-              borderRadius: "42px",
-              "&:hover": {
-                backgroundColor: "#155C9E", // Make sure the background color stays the same on hover
-                boxShadow: "#0022421A", // Make sure the box shadow stays the same on hover
-              },
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-        </Box>
-      </div>
     </Box>
   );
 
@@ -1327,11 +1342,11 @@ export default function TopDrawer({ openDrawer, onClose }) {
       onClose={onClose}
       sx={{
         ".MuiDrawer-paper": {
-          height: "100vh", 
-          width: "100%", 
-          boxShadow: "none", 
+          height: "100vh",
+          width: "100%",
+          boxShadow: "none",
           backgroundColor: "#F8F8FA8F",
-          backdropFilter: "blur(5px)"
+          backdropFilter: "blur(5px)",
         },
       }}
     >

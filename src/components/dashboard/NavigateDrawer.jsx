@@ -106,7 +106,7 @@ const NavigateDrawer = ({ onClose, setOpenNavigation, text }) => {
           </svg>
           App All Navigation
         </h4>
-        <div className="" style={{ marginTop: "20px" }}>
+        <div className="" style={{ marginTop: "10px" }}>
           <div
             style={{
               margin: "40px 6px 30px",

@@ -1,3 +1,11 @@
+.top-drawer-header{
+  height: 70px;
+  width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .top-drawer-card {
   height: 104px;
   width: 100%;
