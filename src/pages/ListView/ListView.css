@@ -1,6 +1,6 @@
 .list-header {
   width: 100%;
-  height: 90px;
+  height: 62px;
   padding: 10px;
   gap: 10px;
   border-radius: 6px;
@@ -24,7 +24,7 @@
 }
 .list-header-left-text h4 {
   font-family: Roboto;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 20px;
   text-align: left;
@@ -67,5 +67,21 @@
   justify-content: center;
 }
 .list-table {
-  margin-top: 25px;
+  margin-top: 13px;
+}
+.list-header-right-input-select {
+  width: 115px;
+  height: 32px;
+  gap: 4px;
+  opacity: 0px;
+  padding: 5px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: #969696;
+  border-radius: 4px;
+  border: 2px solid #e5e5e5;
+  opacity: 0px;
 }

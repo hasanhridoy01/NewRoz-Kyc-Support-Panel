@@ -269,7 +269,7 @@ const rows = [
     email: "arya.stark@got.com",
     docType: "ID",
     docId: "5566778899",
-    registrationDate: "2023-03-25 17:00:00", 
+    registrationDate: "2023-03-25 17:00:00",
     avatar: "https://example.com/arya_stark_avatar.jpg",
   },
   {
@@ -281,7 +281,7 @@ const rows = [
     email: "tyrion.lannister@got.com",
     docType: "Passport",
     docId: "2233445566",
-    registrationDate: "2023-04-05 13:30:00", 
+    registrationDate: "2023-04-05 13:30:00",
     avatar: "https://example.com/tyrion_lannister_avatar.jpg",
   },
   {
@@ -293,7 +293,7 @@ const rows = [
     email: "sansa.stark@got.com",
     docType: "ID",
     docId: "6677889900",
-    registrationDate: "2023-05-12 16:45:00", 
+    registrationDate: "2023-05-12 16:45:00",
     avatar: "https://example.com/sansa_stark_avatar.jpg",
   },
   {
@@ -305,7 +305,7 @@ const rows = [
     email: "bran.stark@got.com",
     docType: "Driver's License",
     docId: "9988776655",
-    registrationDate: "2023-06-20 08:00:00", 
+    registrationDate: "2023-06-20 08:00:00",
     avatar: "https://example.com/bran_stark_avatar.jpg",
   },
 ];
@@ -330,8 +330,10 @@ const ListTable = () => {
           <DataGrid
             rows={rows}
             columns={columns}
-            initialState={{ pagination: { paginationModel } }}
-            pageSizeOptions={[5, 10]}
+            initialState={{
+              pagination: { paginationModel: { pageSize: 10, page: 0 } }, // Set initial page size and page number
+            }}
+            pageSizeOptions={[10, 20]} // Options for page size
             sx={{
               border: 0,
               cursor: "pointer",
@@ -343,23 +345,21 @@ const ListTable = () => {
                   visibility: "visible",
                 },
               },
-              // Remove the default row selection background and border
               "& .Mui-selected": {
                 backgroundColor: "#fffae6 !important",
                 border: "none !important",
                 outline: "none !important",
               },
               "& .MuiDataGrid-cell:focus": {
-                outline: "none", // Remove the focus outline
+                outline: "none",
               },
               "& .MuiDataGrid-cell--editable:focus": {
-                outline: "none", // Remove the focus outline for editable cells
+                outline: "none",
               },
-              // Highlight the selected column
               "& .MuiDataGrid-cell--selected": {
                 backgroundColor: "rgba(0, 123, 255, 0.25)",
                 "&:hover": {
-                  backgroundColor: "rgba(0, 123, 255, 0.35)", // Highlight on hover
+                  backgroundColor: "rgba(0, 123, 255, 0.35)",
                 },
               },
             }}
@@ -463,7 +463,7 @@ const ListTable = () => {
               <span>Current Level:</span> {selectedRow.progress}%
             </p>
             <p>
-              <span>User:</span> <button>Unblock</button>
+              <span>User:</span> <button className="extra-btn">Unblock</button>
             </p>
           </div>
           <div className="details-content">
@@ -492,7 +492,7 @@ const ListTable = () => {
               <span>Balance:</span> {selectedRow.progress}
             </p>
             <p>
-              <span>count Status:</span> <button>Unverified</button>
+              <span>count Status:</span> <button className="extra-btn-two">Unverified</button>
             </p>
           </div>
           <div className="details-bottom">

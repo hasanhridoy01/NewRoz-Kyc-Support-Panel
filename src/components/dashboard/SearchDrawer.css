@@ -84,7 +84,11 @@
   line-height: 16px;
   text-align: left;
   color: #222222;
+  cursor: pointer;
 }
+/* .search-card .search-content h5:hover {
+  border: 2px solid #be185d;
+} */
 .search-card .search-recent {
   width: 419px;
   height: auto;

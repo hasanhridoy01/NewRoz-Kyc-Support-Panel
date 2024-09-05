@@ -1,17 +1,4 @@
-import React from "react";
-import "./ListView.css";
-import logo from "../../assets/images/listview/shield-tick.png";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
-import ListTable from "../../components/listView/Table/ListTable";
-
-// Define the time values for the first Autocomplete
-const timeValues1 = ["08:00", "12:00", "16:00", "20:00"];
-
-// Define the options for the second Autocomplete
-const options2 = ["Option A", "Option B", "Option C", "Option D"];
-
-const ListView = () => {
+const Document = () => {
   return (
     <div>
       <div className="list-header">
@@ -93,11 +80,8 @@ const ListView = () => {
           </button>
         </div>
       </div>
-      <div className="list-table">
-        <ListTable />
-      </div>
     </div>
   );
 };
 
-export default ListView;
+export default Document;
