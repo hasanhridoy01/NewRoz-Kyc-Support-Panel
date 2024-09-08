@@ -1,6 +1,19 @@
-import './Document.css';
+import "./Document.css";
+import Avatar from "@mui/material/Avatar";
+import AvatarGroup from "@mui/material/AvatarGroup";
+import { useState } from "react";
+import DocumentModal from "../../components/DocumentModal/DocumentModal";
+import { Grid } from "@mui/material";
+import DocumentLeft from "../../components/Document/DocumentLeft/DocumentLeft";
+import DocumentRight from "../../components/Document/DocumentRight/DocumentRight";
 
 const Document = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  // handleDocumentModal
+  const handleDocumentModal = () => {
+    setOpenModal(!openModal); // Toggle the modal open/close
+  };
   return (
     <div>
       <div className="list-header">
@@ -82,7 +95,66 @@ const Document = () => {
           </button>
         </div>
       </div>
-      <div className="document-header"></div>
+      {/* DocumentModal */}
+      <DocumentModal
+        openModal={openModal}
+        onClose={() => setOpenModal(false)}
+      />
+      <div className="document-header">
+        <div className="step-one" onClick={handleDocumentModal}>
+          <h4>Customer Identification Program (CIP)</h4>
+          <AvatarGroup sx={{ "& .MuiAvatar-root": { height: 25, width: 25 } }}>
+            <Avatar alt="Remy Sharp" src="https://via.placeholder.com/32" />
+            <Avatar alt="Travis Howard" src="https://via.placeholder.com/32" />
+            <Avatar alt="Agnes Walker" src="https://via.placeholder.com/32" />
+            <Avatar
+              alt="Trevor Henderson"
+              src="https://via.placeholder.com/32"
+            />
+          </AvatarGroup>
+        </div>
+        <div className="step-border"></div>
+        <div className="step-two" onClick={handleDocumentModal}>
+          <h4>Customer Due Diligence (CDD)</h4>
+          <AvatarGroup sx={{ "& .MuiAvatar-root": { height: 25, width: 25 } }}>
+            <Avatar alt="Remy Sharp" src="https://via.placeholder.com/32" />
+            <Avatar alt="Travis Howard" src="https://via.placeholder.com/32" />
+            <Avatar alt="Agnes Walker" src="https://via.placeholder.com/32" />
+            <Avatar
+              alt="Trevor Henderson"
+              src="https://via.placeholder.com/32"
+            />
+          </AvatarGroup>
+        </div>
+        <div className="step-border-extra"></div>
+        <div className="step-three" onClick={handleDocumentModal}>
+          <h4>Compliance</h4>
+          <AvatarGroup sx={{ "& .MuiAvatar-root": { height: 25, width: 25 } }}>
+            <Avatar alt="Remy Sharp" src="https://via.placeholder.com/32" />
+            <Avatar alt="Travis Howard" src="https://via.placeholder.com/32" />
+            <Avatar alt="Agnes Walker" src="https://via.placeholder.com/32" />
+            <Avatar
+              alt="Trevor Henderson"
+              src="https://via.placeholder.com/32"
+            />
+          </AvatarGroup>
+        </div>
+      </div>
+      <div className="document-content">
+        <Grid
+          container
+          alignItems={"center"}
+          justifyContent={"center"}
+          spacing={2}
+        >
+          <Grid item xs={12} lg={6}>
+            <DocumentLeft />
+          </Grid>
+          <Grid item xs={12} lg={6}>
+            <DocumentRight />
+          </Grid>
+        </Grid>
+      </div>
     </div>
   );
 };
