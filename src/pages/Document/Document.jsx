@@ -1,3 +1,5 @@
+import './Document.css';
+
 const Document = () => {
   return (
     <div>
@@ -80,6 +82,7 @@ const Document = () => {
           </button>
         </div>
       </div>
+      <div className="document-header"></div>
     </div>
   );
 };
