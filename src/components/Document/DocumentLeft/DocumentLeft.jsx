@@ -288,16 +288,16 @@ const DocumentLeft = () => {
               </Button>
             ) : (
               <Button
-                sx={{
-                  height: "36px",
-                  padding: "8px 12px",
-                  gap: "3px",
-                  background: "#f23836",
-                  borderRadius: "5px",
-                  "&:hover": {
-                    background: "#f23836",
-                  },
-                }}
+              sx={{
+                height: "36px",
+                padding: "8px 12px",
+                gap: "3px",
+                background: "#035B77",
+                borderRadius: "5px",
+                "&:hover": {
+                  background: "#035B77",
+                },
+              }}
                 onClick={() => handleDecline(panel)}
               >
                 <svg
