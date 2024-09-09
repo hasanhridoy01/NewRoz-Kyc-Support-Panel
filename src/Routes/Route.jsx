@@ -3,6 +3,7 @@ import Main from "../layout/Main/Main";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ListView from "../pages/ListView/ListView";
 import Document from "../pages/Document/Document";
+import Financial from "../pages/Financial/Financial";
 
 export const route = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const route = createBrowserRouter([
             {
                 path: '/document',
                 element: <Document />
+            },
+            {
+                path: '/financial',
+                element: <Financial />
             }
         ]
     }
