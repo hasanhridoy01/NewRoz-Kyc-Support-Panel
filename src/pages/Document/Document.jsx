@@ -45,7 +45,7 @@ const Document = () => {
           <div className="list-header-left-text">
             <h4>Partial KYC List</h4>
             <p>
-              <span>DASHBOARD /</span> List View
+              <span>DASHBOARD /</span> Document Info
             </p>
           </div>
         </div>
@@ -154,6 +154,50 @@ const Document = () => {
             <DocumentRight />
           </Grid>
         </Grid>
+        <div className="document-bottom">
+          <button className="document-bottom-one">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.66699 7.22206C1.66699 4.60354 1.66699 3.29336 2.48088 2.48039C3.29384 1.6665 4.60403 1.6665 7.22255 1.6665H13.8633C14.2411 1.6665 14.4309 1.6665 14.6003 1.73687C14.7707 1.80724 14.905 1.94058 15.1725 2.2091L17.7911 4.82762C18.0596 5.09613 18.1929 5.22947 18.2633 5.39984C18.3337 5.56928 18.3337 5.7591 18.3337 6.13687V12.7776C18.3337 15.3961 18.3337 16.7063 17.5198 17.5193C16.7068 18.3332 15.3966 18.3332 12.7781 18.3332H7.22255C4.60403 18.3332 3.29384 18.3332 2.48088 17.5193C1.66699 16.7063 1.66699 15.3961 1.66699 12.7776V7.22206Z"
+                stroke="#426DF3"
+              />
+              <path
+                d="M13.7044 18.3334V16.4815C13.7044 14.7352 13.7044 13.863 13.1618 13.3204C12.6192 12.7778 11.747 12.7778 10.0007 12.7778H9.0748C7.3285 12.7778 6.45628 12.7778 5.91369 13.3204C5.37109 13.863 5.37109 14.7352 5.37109 16.4815V18.3334"
+                stroke="#426DF3"
+              />
+              <path
+                d="M5.37109 6.2959H10.0007"
+                stroke="#426DF3"
+                stroke-linecap="round"
+              />
+            </svg>
+            Save & Exit
+          </button>
+          <button className="document-bottom-two">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 9.99984L8.32941 13.3332L15 6.6665"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Approve
+          </button>
+        </div>
       </div>
     </div>
   );

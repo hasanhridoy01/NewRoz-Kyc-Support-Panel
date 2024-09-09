@@ -8,13 +8,13 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 
-// Sample data with images
+// Sample data with images replaced with descriptions
 const dataAccordion1 = [
-  { id: 1, fullName: "Jon Snow", imageUrl: "https://via.placeholder.com/50" },
+  { id: 1, fullName: "Jon Snow", description: "Description for Jon Snow" },
   {
     id: 2,
     fullName: "Cersei Lannister",
-    imageUrl: "https://via.placeholder.com/50",
+    description: "Description for Cersei Lannister",
   },
 ];
 
@@ -22,18 +22,18 @@ const dataAccordion2 = [
   {
     id: 1,
     fullName: "Jaime Lannister",
-    imageUrl: "https://via.placeholder.com/50",
+    description: "Description for Jaime Lannister",
   },
-  { id: 2, fullName: "Arya Stark", imageUrl: "https://via.placeholder.com/50" },
+  { id: 2, fullName: "Arya Stark", description: "Description for Arya Stark" },
 ];
 
 const dataAccordion3 = [
   {
     id: 1,
-    fullName: "Daenerys Targaryen",
-    imageUrl: "https://via.placeholder.com/50",
+    fullName: "Jaime Lannister",
+    description: "Description for Jaime Lannister",
   },
-  { id: 2, fullName: "Melisandre", imageUrl: "https://via.placeholder.com/50" },
+  { id: 2, fullName: "Arya Stark", description: "Description for Arya Stark" },
 ];
 
 const DocumentLeft = () => {
@@ -113,50 +113,64 @@ const DocumentLeft = () => {
               {panel === 3 && "Address"}
             </div>
           </AccordionSummary>
-          <AccordionDetails sx={{ padding: "16px" }}>
-            <Paper sx={{ height: 200, width: "100%" }}>
+          <AccordionDetails sx={{ padding: "3px 3px 10px 3px" }}>
+            <Paper
+              sx={{
+                width: "100%",
+                boxShadow: "none",
+                border: "1px solid #f1f1f1",
+              }}
+            >
               <DataGrid
                 rows={getDataForPanel(panel)}
                 checkboxSelection={declined[panel]}
                 columns={[
                   {
-                    field: "imageUrl",
-                    headerName: "Image",
-                    width: 100,
+                    field: "info", // Combined field for image and full name
+                    headerName: "Select All", // Header name for the column
+                    width: 300, // Adjust width accordingly
                     renderCell: (params) => (
-                      <img
-                        src={params.value}
-                        alt={params.row.fullName}
-                        style={{ width: "50px", height: "50px" }}
-                      />
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <span>{params.row.fullName}</span>
+                        <span style={{ marginLeft: "30px" }}>
+                          {params.row.description}
+                        </span>{" "}
+                        {/* Display full name */}
+                      </div>
                     ),
                   },
-                  { field: "fullName", headerName: "Full Name", width: 200 },
                 ]}
-                hideFooterPagination
-                hideFooter
+                pagination={false} // Disable pagination
+                hideFooterPagination // Hide pagination controls
+                hideFooterRowCount // Hide row count
+                hideFooterSelectedRowCount // Hide selected row count
                 sx={{
-                    border: 0,
-                    cursor: "pointer",
-                    "& .MuiDataGrid-columnHeaderTitleContainer": {
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      "& .MuiDataGrid-iconButtonContainer": {
-                        visibility: "visible",
-                      },
+                  border: 0,
+                  cursor: "pointer",
+                  "& .MuiDataGrid-columnHeaderTitleContainer": {
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    "& .MuiDataGrid-iconButtonContainer": {
+                      visibility: "visible", // Make sort icon always visible
                     },
-                    "& .Mui-selected": {
-                      border: "none !important",
-                      outline: "none !important",
-                    },
-                    "& .MuiDataGrid-cell:focus": {
-                      outline: "none",
-                    },
-                    "& .MuiDataGrid-cell--editable:focus": {
-                      outline: "none",
-                    },
-                  }}
+                  },
+                  "& .MuiDataGrid-columnHeader:after": {
+                    content: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>')`,
+                    display: "inline-block",
+                    marginLeft: "5px", // Adjust the spacing
+                  },
+                  "& .Mui-selected": {
+                    border: "none !important",
+                    outline: "none !important",
+                  },
+                  "& .MuiDataGrid-cell:focus": {
+                    outline: "none",
+                  },
+                  "& .MuiDataGrid-cell--editable:focus": {
+                    outline: "none",
+                  },
+                }}
               />
             </Paper>
             {declined[panel] && (
@@ -288,16 +302,16 @@ const DocumentLeft = () => {
               </Button>
             ) : (
               <Button
-              sx={{
-                height: "36px",
-                padding: "8px 12px",
-                gap: "3px",
-                background: "#035B77",
-                borderRadius: "5px",
-                "&:hover": {
+                sx={{
+                  height: "36px",
+                  padding: "8px 12px",
+                  gap: "3px",
                   background: "#035B77",
-                },
-              }}
+                  borderRadius: "5px",
+                  "&:hover": {
+                    background: "#035B77",
+                  },
+                }}
                 onClick={() => handleDecline(panel)}
               >
                 <svg

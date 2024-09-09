@@ -106,3 +106,12 @@
   justify-content: center;
   gap: 10px;
 }
+.document-content-right-middle-bottom-address{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.document-content-right-middle-bottom-address img{
+  height: 197px;
+}
