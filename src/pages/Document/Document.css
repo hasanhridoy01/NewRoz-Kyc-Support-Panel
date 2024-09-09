@@ -94,11 +94,11 @@
 }
 .document-content {
   margin-top: 30px;
-  height: 462px;
+  height: 662px;
 }
 .document-content-left {
   overflow-y: auto;
-  height: 462px;
+  height: 662px;
 
   /* Hide scrollbar for Webkit browsers (Chrome, Safari, etc.) */
   scrollbar-width: none; /* For Firefox */

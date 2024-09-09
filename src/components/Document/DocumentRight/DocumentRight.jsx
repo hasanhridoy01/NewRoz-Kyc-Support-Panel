@@ -2,6 +2,11 @@ import "./DocumentRight.css";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { styled } from "@mui/material/styles";
+import img from "../../../assets/images/Document/photo.png";
+import img1 from "../../../assets/images/Document/Frame 48095622.png";
+import img2 from "../../../assets/images/Document/img configur Controls.png";
+import ImageControl from "../ImageControl/ImageControl";
+
 const CustomCheckbox = styled(Checkbox)(({ theme }) => ({
   "&.Mui-checked": {
     color: "#BE185D", // Replace 'unique-color' with your desired color
@@ -78,12 +83,59 @@ const DocumentRight = () => {
           <FormControlLabel
             control={<CustomCheckbox />}
             label="Current"
-             sx={{ marginRight: '0px' }}
+            sx={{ marginRight: "0px" }}
           />
-          <FormControlLabel
-            control={<CustomCheckbox />}
-            label="Existing"
-          />
+          <FormControlLabel control={<CustomCheckbox />} label="Existing" />
+        </div>
+      </div>
+      <div className="document-content-right-middle">
+        <div className="document-content-right-middle-top">
+          <p>Selfie</p>
+          <button>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.2797 10.0333L8.93306 5.68664C8.41973 5.1733 7.57973 5.1733 7.06639 5.68664L2.71973 10.0333"
+                stroke="#035B77"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="document-content-right-middle-bottom">
+          <img src={img} alt="" />
+        </div>
+        <div className="document-content-right-middle-top">
+          <p>Personal ID Card</p>
+          <button>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.2797 10.0333L8.93306 5.68664C8.41973 5.1733 7.57973 5.1733 7.06639 5.68664L2.71973 10.0333"
+                stroke="#035B77"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="document-content-right-middle-bottom-extra-image">
+          <ImageControl img1={img1} img2={img2} />
         </div>
       </div>
     </div>

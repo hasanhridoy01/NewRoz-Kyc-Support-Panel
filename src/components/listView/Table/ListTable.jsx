@@ -5,6 +5,7 @@ import "./ListTable.css";
 import img1 from "../../../assets/images/listview/ico1.png";
 import img2 from "../../../assets/images/listview/ico2.png";
 import icon from "../../../assets/images/listview/item07.png";
+import { useNavigate } from "react-router-dom";
 
 const columns = [
   {
@@ -314,6 +315,12 @@ const paginationModel = { page: 0, pageSize: 5 };
 
 const ListTable = () => {
   const [selectedRow, setSelectedRow] = React.useState(null);
+  const navigate = useNavigate();
+
+  //handleToDocumentPage
+  const handleToDocumentPage = () => {
+    navigate('/document')
+  }
 
   const handleRowClick = (params) => {
     setSelectedRow(params.row);
@@ -496,7 +503,7 @@ const ListTable = () => {
             </p>
           </div>
           <div className="details-bottom">
-            <button>
+            <button onClick={handleToDocumentPage}>
               <svg
                 width="20"
                 height="20"
