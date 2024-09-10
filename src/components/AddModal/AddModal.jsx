@@ -63,7 +63,8 @@ const AddModal = ({ openAddModal, onClose }) => {
   return (
     <Modal
       open={openAddModal}
-      onClose={onClose}
+      onClose={null}
+      disableEscapeKeyDown
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >

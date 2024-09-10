@@ -63,7 +63,8 @@ const SearchModal = ({ openSearchModal, onClose }) => {
   return (
     <Modal
       open={openSearchModal}
-      onClose={onClose}
+      onClose={null}
+      disableEscapeKeyDown
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
