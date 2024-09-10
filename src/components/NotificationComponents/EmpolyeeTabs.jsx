@@ -63,6 +63,7 @@ export default function EmployeeTabs() {
       perView: 7,
       spacing: 14,
     },
+    autoplay: true,
   });
 
   // Array containing user data
@@ -92,7 +93,7 @@ export default function EmployeeTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%", marginTop: "40px", marginBottom: "40px",}}>
+    <Box sx={{ width: "100%", marginTop: "40px", marginBottom: "40px" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}
@@ -234,7 +235,7 @@ export default function EmployeeTabs() {
           fontWeight: 550,
           fontSize: "14px",
           lineHeight: "12px",
-          marginTop: "8px"
+          marginTop: "8px",
         }}
       >
         View All
