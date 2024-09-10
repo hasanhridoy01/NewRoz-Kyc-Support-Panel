@@ -196,25 +196,18 @@ const DocumentLeft = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M6.5332 16.6834L7.8582 17.675C9.0332 18.5583 10.9665 18.5583 12.1415 17.675L15.7249 15C16.5165 14.4084 17.1665 13.1167 17.1665 12.1334V5.93335"
+                      d="M5 15L15 5"
                       stroke="#F23836"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                     <path
-                      d="M15.8168 3.61663C15.6918 3.54163 15.5585 3.47497 15.4251 3.41663L11.2668 1.8583C10.5751 1.59997 9.4418 1.59997 8.75013 1.8583L4.58346 3.42497C3.62513 3.7833 2.8418 4.91663 2.8418 5.9333V12.125C2.8418 13.1083 3.4918 14.4 4.28346 14.9916L4.45013 15.1166"
+                      d="M15 15L5 5"
                       stroke="#F23836"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M18.3332 1.66663L1.6665 18.3333"
-                      stroke="#F23836"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                   </svg>
                   <span
