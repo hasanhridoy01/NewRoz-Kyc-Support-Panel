@@ -115,7 +115,7 @@ const Main = () => {
 
   //handleHomeNavigation
   const handleHomeNavigation = () => {
-    navigate("/");    
+    navigate("/");
   };
 
   return (
@@ -240,19 +240,24 @@ const Main = () => {
         </div>
 
         <div className="left-button">
-          {!openLeftDrawer && (
-            <button
-              style={{
-                height: "222px",
-                cursor: "pointer",
-                background: "none",
-                border: "none",
-              }}
-              onClick={toggleLeftDrawer}
-            >
-              <img style={{ paddingLeft: "0px" }} src={buttonImg} alt="" />
-            </button>
-          )}
+          {!openLeftDrawer &&
+            !open &&
+            !openUser &&
+            !openAddModal &&
+            !openSearchModal && (
+              <button
+                style={{
+                  height: "222px",
+                  cursor: "pointer",
+                  background: "none",
+                  border: "none",
+                }}
+                onClick={toggleLeftDrawer}
+              >
+                <img style={{ paddingLeft: "0px" }} src={buttonImg} alt="" />
+              </button>
+            )}
+
           <LeftDrawer
             openLeftDrawer={openLeftDrawer}
             onClose={toggleLeftDrawer}
