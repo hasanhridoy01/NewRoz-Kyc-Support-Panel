@@ -16,13 +16,18 @@ import card8 from "../../assets/images/dashboard/cardImages/Icon8.png";
 import card9 from "../../assets/images/dashboard/cardImages/Icon9.png";
 import card10 from "../../assets/images/dashboard/cardImages/Icon10.png";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   //NavigatePortalListPage
   const NavigatePortalListPage = () => {
-    navigate('/listView');
+    navigate("/listView");
   };
+  //page top on position...............!
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="dashboard-container">
       <Grid

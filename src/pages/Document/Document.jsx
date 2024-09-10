@@ -1,7 +1,7 @@
 import "./Document.css";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
-import { useState } from "react";
+import React, { useState } from "react";
 import DocumentModal from "../../components/DocumentModal/DocumentModal";
 import { Grid } from "@mui/material";
 import DocumentLeft from "../../components/Document/DocumentLeft/DocumentLeft";
@@ -14,6 +14,10 @@ const Document = () => {
   const handleDocumentModal = () => {
     setOpenModal(!openModal); // Toggle the modal open/close
   };
+  //page top on position...............!
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="list-header">

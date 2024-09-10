@@ -2,8 +2,13 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import "./Financial.css";
 import { TextField } from "@mui/material";
+import React from "react";
 
 const Financial = () => {
+  //page top on position...............!
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="list-header">

@@ -12,6 +12,10 @@ const timeValues1 = ["08:00", "12:00", "16:00", "20:00"];
 const options2 = ["Option A", "Option B", "Option C", "Option D"];
 
 const ListView = () => {
+  //page top on position...............!
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="list-header">
