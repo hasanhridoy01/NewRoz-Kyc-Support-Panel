@@ -1,4 +1,4 @@
-import { Divider, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import "./Dashboard.css";
 import img1 from "../../assets/images/dashboard/cardImages/User.png";
 import chartImage1 from "../../assets/images/dashboard/cardImages/Chart.png";
