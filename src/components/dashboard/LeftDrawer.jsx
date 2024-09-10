@@ -2,8 +2,80 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import { useState, useEffect } from "react";
 import buttonImg from "../../assets/images/dashboard/Favirite1.png";
-import { Grid } from "@mui/material";
 import "./LeftDrawer.css";
+
+const favoriteCards = [
+  {
+    title: "Partial KYC List",
+    description: "DASHBOARD / List View",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#BE185D",
+  },
+  {
+    title: "Full KYC List",
+    description: "DASHBOARD / Detailed View",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#BE185D",
+  },
+  {
+    title: "Transaction History",
+    description: "DASHBOARD / Summary",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#BE185D",
+  },
+  {
+    title: "User Analytics",
+    description: "DASHBOARD / Insights",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#3B82F6",
+  },
+  {
+    title: "User Feedback",
+    description: "DASHBOARD / Reviews",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#E11D48",
+  },
+  {
+    title: "Payment History",
+    description: "DASHBOARD / Transactions",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#22C55E",
+  },
+  {
+    title: "Project Overview",
+    description: "DASHBOARD / Project Status",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#F97316",
+  },
+  {
+    title: "User Access Control",
+    description: "DASHBOARD / Permissions",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#9333EA",
+  },
+  {
+    title: "Audit Logs",
+    description: "DASHBOARD / Activity",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#10B981",
+  },
+  {
+    title: "Financial Reports",
+    description: "DASHBOARD / Overview",
+    iconPath:
+      "M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z",
+    stroke: "#2563EB",
+  },
+];
 
 const LeftDrawer = ({ openLeftDrawer, onClose }) => {
   const [showButton, setShowButton] = useState(false);
@@ -25,8 +97,15 @@ const LeftDrawer = ({ openLeftDrawer, onClose }) => {
         width: "360px",
         paddingRight: "50px",
         height: "100%",
-        overflow: "hidden",
+        overflowY: "scroll", // Make sure the content can still scroll vertically
+        overflowX: "hidden", // Corrected camelCase
         background: "#F0F9F9",
+        // Hide the scrollbar for webkit browsers
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        // Hide the scrollbar for Firefox
+        scrollbarWidth: "none",
       }}
       role="presentation"
     >
@@ -41,6 +120,10 @@ const LeftDrawer = ({ openLeftDrawer, onClose }) => {
           justifyContent: "space-between",
           padding: "10px 15px",
           marginBottom: "20px",
+          position: "sticky",
+          top: 0,
+          zIndex: 1000,
+          background: "#f0f9f9",
         }}
       >
         <h4
@@ -137,181 +220,33 @@ const LeftDrawer = ({ openLeftDrawer, onClose }) => {
           paddingRight: "50px",
           height: "100%",
           background: "#F0F9F9",
-          position: 'relative'
+          position: "relative",
         }}
       >
-        <div className="favorite-card-section">
-          <div className="Favorite-card">
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M9.05005 12.37L10.66 13.98L14.96 9.67999"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div className="favorite-content">
-              <h4>Partial KYC List</h4>
-              <p>DASHBOARD / List View</p>
+        {favoriteCards.map((card, index) => (
+          <div className="favorite-card-section" key={index}>
+            <div className="Favorite-card">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d={card.iconPath}
+                  stroke={card.stroke}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="favorite-content">
+                <h4>{card.title}</h4>
+                <p>{card.description}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="favorite-card-section">
-          <div className="Favorite-card">
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M9.05005 12.37L10.66 13.98L14.96 9.67999"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div className="favorite-content">
-              <h4>Partial KYC List</h4>
-              <p>DASHBOARD / List View</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="favorite-card-section">
-          <div className="Favorite-card">
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M9.05005 12.37L10.66 13.98L14.96 9.67999"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div className="favorite-content">
-              <h4>Partial KYC List</h4>
-              <p>DASHBOARD / List View</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="favorite-card-section">
-          <div className="Favorite-card">
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M9.05005 12.37L10.66 13.98L14.96 9.67999"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div className="favorite-content">
-              <h4>Partial KYC List</h4>
-              <p>DASHBOARD / List View</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="favorite-card-section">
-          <div className="Favorite-card">
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M9.05005 12.37L10.66 13.98L14.96 9.67999"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div className="favorite-content">
-              <h4>Partial KYC List</h4>
-              <p>DASHBOARD / List View</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="favorite-card-section">
-          <div className="Favorite-card">
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.4899 2.73L5.49991 4.61C4.34991 5.04 3.40991 6.4 3.40991 7.62V15.05C3.40991 16.23 4.18991 17.78 5.13991 18.49L9.43991 21.7C10.8499 22.76 13.1699 22.76 14.5799 21.7L18.8799 18.49C19.8299 17.78 20.6099 16.23 20.6099 15.05V7.62C20.6099 6.39 19.6699 5.03 18.5199 4.6L13.5299 2.73C12.6799 2.42 11.3199 2.42 10.4899 2.73Z"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M9.05005 12.37L10.66 13.98L14.96 9.67999"
-                stroke="#BE185D"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <div className="favorite-content">
-              <h4>Partial KYC List</h4>
-              <p>DASHBOARD / List View</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </Box>
     </Box>
   );

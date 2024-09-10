@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Avatar, Container, Tooltip } from "@mui/material";
 import { useState } from "react";
 import TopDrawer from "../../components/dashboard/TopDrawer";
@@ -70,6 +70,7 @@ const Main = () => {
   const [openLeftDrawer, setOpenLeftDrawer] = useState(false);
   const [openSearchModal, setOpenSearchModal] = useState(false);
   const [openNotificationDrawer, setOpenNotificationDrawer] = useState(false);
+  const navigate = useNavigate();
 
   // Toggle drawer state
   const toggleDrawer = () => {
@@ -110,6 +111,11 @@ const Main = () => {
 
   const handleClick = () => {
     setOpen(!open);
+  };
+
+  //handleHomeNavigation
+  const handleHomeNavigation = () => {
+    navigate("/");    
   };
 
   return (
@@ -209,7 +215,7 @@ const Main = () => {
             </button>
           </CustomTooltip>
 
-          <button className="btn-two">
+          <button className="btn-two" onClick={handleHomeNavigation}>
             <svg
               width="24"
               height="25"
@@ -304,12 +310,12 @@ const Main = () => {
         {/* Apply Outlet */}
         <div className="outlet-style">
           <Container
-            maxWidth={false}  // Disable default maxWidth handling
-            sx={{ 
-              maxWidth: '1340px', // Set custom max-width
-              width: '100%',
-              height: "100%" ,     // Ensure it takes full width if needed
-              margin: 'auto'    // Center the container
+            maxWidth={false} // Disable default maxWidth handling
+            sx={{
+              maxWidth: "1340px", // Set custom max-width
+              width: "100%",
+              height: "100%", // Ensure it takes full width if needed
+              margin: "auto", // Center the container
             }}
           >
             <Outlet />
