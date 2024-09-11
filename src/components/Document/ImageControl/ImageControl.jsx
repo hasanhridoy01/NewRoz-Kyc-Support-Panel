@@ -40,6 +40,7 @@ const ImageControl = ({ img1, img2 }) => {
         <img
           src={img1}
           alt="Image 1"
+          loading="lazy"
           style={{
             filter: `brightness(${brightness1}) contrast(${contrast1})`,
           }}
@@ -213,6 +214,7 @@ const ImageControl = ({ img1, img2 }) => {
         <img
           src={img2}
           alt="Image 2"
+          loading="lazy"
           style={{
             filter: `brightness(${brightness2}) contrast(${contrast2})`,
           }}
