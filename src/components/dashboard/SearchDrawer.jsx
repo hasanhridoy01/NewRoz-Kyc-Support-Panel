@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import "./SearchDrawer.css";
 
-const SearchDrawer = ({ onClose, openSearchNavigation }) => {
+const SearchDrawer = ({ onClose, openSearchNavigation, }) => {
   const [inputValue, setInputValue] = useState(""); // State for input value
   const [showCard, setShowCard] = useState(false); // State for showing the card
 
@@ -21,11 +21,6 @@ const SearchDrawer = ({ onClose, openSearchNavigation }) => {
   const handleCloseInput = () => {
     setInputValue("");
     setShowCard(false);
-  };
-
-  // Close drawer
-  const handleBack = () => {
-    openSearchNavigation(false);
   };
 
   return (
