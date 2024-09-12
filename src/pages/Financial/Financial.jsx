@@ -158,16 +158,16 @@ const Financial = () => {
           <div className="financial-content-content-input-field">
             <label htmlFor="">Write a Comment</label>
             <TextField
-              placeholder="Write Here.." // Placeholder text
-              multiline // Enables multiline input
+              placeholder="Write Here.."
+              multiline
               minRows={4}
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "&:hover fieldset": {
-                    borderColor: "none", // Custom border color on hover
+                    borderColor: "none",
                   },
                   "&.Mui-focused fieldset": {
-                    borderColor: "none", // Custom border color when focused
+                    borderColor: "none",
                   },
                 },
               }}
