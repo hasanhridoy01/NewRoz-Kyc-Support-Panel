@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import "./SearchDrawer.css";
 
-const SearchDrawer = ({ onClose, openSearchNavigation, }) => {
+const SearchDrawer = ({ onClose, openSearchNavigation }) => {
   const [inputValue, setInputValue] = useState(""); // State for input value
   const [showCard, setShowCard] = useState(false); // State for showing the card
 
