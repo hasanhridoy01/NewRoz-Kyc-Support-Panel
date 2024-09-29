@@ -251,7 +251,6 @@ const AddModal = ({ openAddModal, onClose }) => {
                   <option value="it">Information Technology</option>
                   <option value="marketing">Marketing</option>
                   <option value="sales">Sales</option>
-                  {/* Add more options as needed */}
                 </select>
               </Grid>
 
