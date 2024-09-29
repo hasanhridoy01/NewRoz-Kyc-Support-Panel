@@ -5,8 +5,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./SearchDrawer.css";
 
 const SearchDrawer = ({ onClose, openSearchNavigation }) => {
-  const [inputValue, setInputValue] = useState(""); // State for input value
-  const [showCard, setShowCard] = useState(false); // State for showing the card
+  const [inputValue, setInputValue] = useState(""); 
+  const [showCard, setShowCard] = useState(false); 
 
   // Handle input change and show card only when there's text
   const handleInputChange = (e) => {
@@ -67,7 +67,7 @@ const SearchDrawer = ({ onClose, openSearchNavigation }) => {
             <input
               type="text"
               value={inputValue}
-              onChange={handleInputChange} // Handle input change
+              onChange={handleInputChange} 
               placeholder="Search..."
             />
 
