@@ -149,35 +149,35 @@ const AddModal = ({ openAddModal, onClose }) => {
               centered
               sx={{
                 ".MuiTabs-flexContainer": {
-                  gap: 2, // Adds space between the tabs
+                  gap: 2, 
                   height: "55px",
                   width: "700px",
                 },
                 ".MuiTab-root": {
                   padding: "4px 12px",
                   borderRadius: "24px",
-                  height: "30px", // Set your desired height here
+                  height: "30px", 
                   width: "120px",
-                  textTransform: "none", // Disables uppercase text
-                  backgroundColor: "#FFFFFF", // Background color of tabs
-                  color: "#037777", // Text color
+                  textTransform: "none", 
+                  backgroundColor: "#FFFFFF", 
+                  color: "#037777", 
                   fontSize: "12px",
                   fontWeight: 500,
                   lineHeight: "18px",
-                  boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.2)", // Outer shadow for all tabs, with increased spread
-                  overflow: "visible", // Ensure shadow is not clipped
+                  boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.2)", 
+                  overflow: "visible", 
                   zIndex: 1000,
                   "&.Mui-selected": {
                     backgroundColor: "#fff",
-                    color: "#037777", // Changes text color when selected
-                    boxShadow: "inset 0px 2px 4px rgba(0, 0, 0, 0.3)", // Inner shadow for the selected tab
+                    color: "#037777", 
+                    boxShadow: "inset 0px 2px 4px rgba(0, 0, 0, 0.3)", 
                   },
                   // "&:hover": {
-                  //   backgroundColor: "#1565c0", // Background color on hover
+                  //   backgroundColor: "#1565c0", 
                   // },
                 },
                 ".MuiTabs-indicator": {
-                  display: "none", // Hides the default indicator/border below the selected tab
+                  display: "none", 
                 },
               }}
             >
