@@ -309,13 +309,13 @@ const SearchDrawer = ({ onClose, openSearchNavigation }) => {
             backgroundColor: "#155C9E",
             border: "1px solid #62C6FF",
             color: "#fff",
-            boxShadow: "#0022421A",
+            boxShadow: "0px 4px 10px rgba(0, 34, 66, 0.1)", // Correct box-shadow
             height: "50px",
             width: "50px",
             borderRadius: "42px",
             "&:hover": {
-              backgroundColor: "#155C9E",
-              boxShadow: "#0022421A",
+              backgroundColor: "#155C9E", // Same background on hover
+              boxShadow: "0px 4px 10px rgba(0, 34, 66, 0.2)", // Adjust hover box-shadow for subtle effect
             },
           }}
         >
