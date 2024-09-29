@@ -243,67 +243,7 @@ const SearchModal = ({ openSearchModal, onClose }) => {
             </div>
             <Grid container spacing={2} sx={{ marginTop: "60px" }}>
               {/* First Row */}
-              <Grid item xs={12} sm={6}>
-                <div className="search-item">
-                  <div
-                    className=""
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                    }}
-                  >
-                    <img src={img} alt="" />
-                    <div className="">
-                      <h4
-                        style={{
-                          fontFamily: "Roboto",
-                          fontWeight: 500,
-                          fontSize: "16px",
-                          lineHeight: "16px",
-                          color: "#035B77",
-                        }}
-                      >
-                        Guy Hawkins
-                      </h4>
-                      <p
-                        style={{
-                          fontFamily: "Roboto",
-                          fontWeight: 500,
-                          fontSize: "12px",
-                          lineHeight: "16px",
-                          color: "#EC8400",
-                          marginTop: "4px",
-                        }}
-                      >
-                        +9641793661527
-                      </p>
-                    </div>
-                  </div>
-                  <div className="">
-                    <button className="search-item-btn">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699M3.5 12H20.33"
-                          stroke="#222222"
-                          stroke-width="1.5"
-                          stroke-miterlimit="10"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={12}>
                 <div className="search-item">
                   <div
                     className=""

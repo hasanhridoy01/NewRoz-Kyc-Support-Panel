@@ -287,7 +287,7 @@ const AddModal = ({ openAddModal, onClose }) => {
         </div>
         <div className="header-bottom">
           <div className="">
-            <button className="close-btn">
+            <button className="close-btn" onClick={onClose}>
               <svg
                 width="18"
                 height="18"
