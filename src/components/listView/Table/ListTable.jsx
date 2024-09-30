@@ -338,7 +338,7 @@ const ListTable = () => {
             rows={rows}
             columns={columns}
             initialState={{
-              pagination: { paginationModel: { pageSize: 10, page: 0 } }, // Set initial page size and page number
+              pagination: { paginationModel: { pageSize: 10, page: 0 } },
             }}
             pageSizeOptions={[10, 20]} // Options for page size
             sx={{
