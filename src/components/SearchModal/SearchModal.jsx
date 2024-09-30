@@ -145,20 +145,20 @@ const SearchModal = ({ openSearchModal, onClose }) => {
                   fontSize: "12px",
                   fontWeight: 500,
                   lineHeight: "18px",
-                  boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.2)", // Outer shadow for all tabs, with increased spread
+                  boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.2)", 
                   overflow: "visible", // Ensure shadow is not clipped
                   zIndex: 1000,
                   "&.Mui-selected": {
                     backgroundColor: "#fff",
                     color: "#037777", // Changes text color when selected
-                    boxShadow: "inset 0px 2px 4px rgba(0, 0, 0, 0.3)", // Inner shadow for the selected tab
+                    boxShadow: "inset 0px 2px 4px rgba(0, 0, 0, 0.3)", 
                   },
                   // "&:hover": {
                   //   backgroundColor: "#1565c0", // Background color on hover
                   // },
                 },
                 ".MuiTabs-indicator": {
-                  display: "none", // Hides the default indicator/border below the selected tab
+                  display: "none", 
                 },
               }}
             >
