@@ -319,8 +319,8 @@ const ListTable = () => {
 
   //handleToDocumentPage
   const handleToDocumentPage = () => {
-    navigate('/document')
-  }
+    navigate("/document");
+  };
 
   const handleRowClick = (params) => {
     setSelectedRow(params.row);
@@ -405,8 +405,8 @@ const ListTable = () => {
           <div className="details-header">
             <img src={icon} alt="" />
             <div className="">
-              <h3>Guy Hawkins</h3>
-              <p>+9641793661527</p>
+              <h3>{selectedRow.firstName + " " + selectedRow.lastName}</h3>
+              <p>+{selectedRow.docId}</p>
               <div className="details-header-bottom">
                 {" "}
                 <h6>gafura1992@newroztech.com</h6>
@@ -499,7 +499,8 @@ const ListTable = () => {
               <span>Balance:</span> {selectedRow.progress}
             </p>
             <p>
-              <span>count Status:</span> <button className="extra-btn-two">Unverified</button>
+              <span>count Status:</span>{" "}
+              <button className="extra-btn-two">Unverified</button>
             </p>
           </div>
           <div className="details-bottom">
