@@ -137,20 +137,20 @@ const SearchModal = ({ openSearchModal, onClose }) => {
                 ".MuiTab-root": {
                   padding: "4px 12px",
                   borderRadius: "24px",
-                  height: "30px", // Set your desired height here
+                  height: "30px", 
                   width: "120px",
-                  textTransform: "none", // Disables uppercase text
-                  backgroundColor: "#FFFFFF", // Background color of tabs
-                  color: "#037777", // Text color
+                  textTransform: "none", 
+                  backgroundColor: "#FFFFFF", 
+                  color: "#037777", 
                   fontSize: "12px",
                   fontWeight: 500,
                   lineHeight: "18px",
                   boxShadow: "1px 2px 4px rgba(0, 0, 0, 0.2)", 
-                  overflow: "visible", // Ensure shadow is not clipped
+                  overflow: "visible", 
                   zIndex: 1000,
                   "&.Mui-selected": {
                     backgroundColor: "#fff",
-                    color: "#037777", // Changes text color when selected
+                    color: "#037777", 
                     boxShadow: "inset 0px 2px 4px rgba(0, 0, 0, 0.3)", 
                   },
                   // "&:hover": {
