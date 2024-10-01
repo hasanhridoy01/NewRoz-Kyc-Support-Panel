@@ -340,7 +340,7 @@ const ListTable = () => {
             initialState={{
               pagination: { paginationModel: { pageSize: 10, page: 0 } },
             }}
-            pageSizeOptions={[10, 20]} // Options for page size
+            pageSizeOptions={[10, 20]} 
             sx={{
               border: 0,
               cursor: "pointer",
