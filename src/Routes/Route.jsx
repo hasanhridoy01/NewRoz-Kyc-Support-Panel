@@ -6,26 +6,26 @@ import Document from "../pages/Document/Document";
 import Financial from "../pages/Financial/Financial";
 
 export const route = createBrowserRouter([
-    {
-        path: '/',
-        element: <Main />,
-        children: [
-            {
-                path: '/',
-                element: <Dashboard />
-            },
-            {
-                path: '/listView',
-                element: <ListView />
-            },
-            {
-                path: '/document',
-                element: <Document />
-            },
-            {
-                path: '/financial',
-                element: <Financial />
-            }
-        ]
-    }
+  {
+    path: "/",
+    element: <Main />, // Main layout
+    children: [
+      {
+        path: "/",
+        element: <Dashboard />,
+      },
+      {
+        path: "/listView",
+        element: <ListView />,
+      },
+      {
+        path: "/document",
+        element: <Document />,
+      },
+      {
+        path: "/financial",
+        element: <Financial />,
+      },
+    ],
+  }
 ]);
