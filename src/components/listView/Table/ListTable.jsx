@@ -234,7 +234,7 @@ const rows = [
     email: "jon.snow@got.com",
     docType: "Passport",
     docId: "123456789",
-    registrationDate: "2023-01-15 20:30:00", // Date and time in BST
+    registrationDate: "2023-01-15 20:30:00", 
     avatar: "../../../assets/images/listview/ico2.png",
   },
   {
@@ -246,7 +246,7 @@ const rows = [
     email: "cersei.lannister@got.com",
     docType: "ID",
     docId: "987654321",
-    registrationDate: "2022-12-20 15:15:00", // Date and time in BST
+    registrationDate: "2022-12-20 15:15:00", 
     avatar: { img2 },
   },
   {
