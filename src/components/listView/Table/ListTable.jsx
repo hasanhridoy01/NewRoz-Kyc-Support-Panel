@@ -105,8 +105,8 @@ const columns = [
             alignItems: "center",
             justifyContent: "start",
             gap: "8px",
-            width: "100%", // Ensure the container takes full width
-            height: "100%", // Ensure the container takes full height
+            width: "100%",
+            height: "100%",
           }}
         >
           <button className="list-btn-one">
@@ -234,7 +234,7 @@ const rows = [
     email: "jon.snow@got.com",
     docType: "Passport",
     docId: "123456789",
-    registrationDate: "2023-01-15 20:30:00", 
+    registrationDate: "2023-01-15 20:30:00",
     avatar: "../../../assets/images/listview/ico2.png",
   },
   {
@@ -246,7 +246,7 @@ const rows = [
     email: "cersei.lannister@got.com",
     docType: "ID",
     docId: "987654321",
-    registrationDate: "2022-12-20 15:15:00", 
+    registrationDate: "2022-12-20 15:15:00",
     avatar: { img2 },
   },
   {
@@ -340,7 +340,7 @@ const ListTable = () => {
             initialState={{
               pagination: { paginationModel: { pageSize: 10, page: 0 } },
             }}
-            pageSizeOptions={[10, 20]} 
+            pageSizeOptions={[10, 20]}
             sx={{
               border: 0,
               cursor: "pointer",
