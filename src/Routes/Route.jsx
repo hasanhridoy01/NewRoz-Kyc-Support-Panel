@@ -8,7 +8,7 @@ import Financial from "../pages/Financial/Financial";
 export const route = createBrowserRouter([
   {
     path: "/",
-    element: <Main />, // Main layout
+    element: <Main />, 
     children: [
       {
         path: "/",
