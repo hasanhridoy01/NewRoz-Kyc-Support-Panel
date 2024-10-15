@@ -314,17 +314,7 @@ const Main = () => {
 
         {/* Apply Outlet */}
         <div className="outlet-style">
-          <Container
-            maxWidth={false} // Disable default maxWidth handling
-            sx={{
-              maxWidth: "1340px", // Set custom max-width
-              width: "100%",
-              height: "100%", // Ensure it takes full width if needed
-              margin: "auto", // Center the container
-            }}
-          >
             <Outlet />
-          </Container>
         </div>
 
         {/* NotificationDrawer */}
