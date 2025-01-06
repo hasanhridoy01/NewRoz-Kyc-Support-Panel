@@ -314,7 +314,9 @@ const Main = () => {
 
         {/* Apply Outlet */}
         <div className="outlet-style">
+          <Container maxWidth="xl">
             <Outlet />
+          </Container>
         </div>
 
         {/* NotificationDrawer */}
